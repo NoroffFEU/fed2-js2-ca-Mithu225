@@ -1,1 +1,11 @@
 @import url(_reset.css);
+.form {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--text-size-large);
+  margin: 0 auto;
+  max-width: 40rem;
+  text-align: center;
+  padding-top: 1rem;
+}
+
