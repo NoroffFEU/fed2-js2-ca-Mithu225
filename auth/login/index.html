@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,23 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Noroff FED2 JS2 CA</title>
     <script type="module" src="/src/app.js"></script>
+    <link rel="stylesheet" href="/src/css/login.css" />
+    <link rel="stylesheet" href="/src/css/style.css" />
   </head>
 
   <body>
-    <h1>Login</h1>
-    <form name="login">
-      <div>
-        <label for="email">Email</label>
-        <input id="email" type="email" name="email" required />
-      </div>
+    <div class="form-top">
+      <img class="logo" src="/asset/snappo.png" alt="Snappo logo" />
+      <h1 class="slogan">Connect. Share. Inspire</h1>
+    </div>
+    <form class="form" name="login">
+      <div class="login-form">
+        <label class="gradient-text" for="email">Email</label>
+        <input
+          class="gradient-input"
+          id="email"
+          type="email"
+          name="email"
+          required
+        />
 
-      <div>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" required />
+        <label class="gradient-text" for="password">Password</label>
+        <input
+          class="gradient-input"
+          type="password"
+          name="password"
+          id="password"
+          required
+        />
       </div>
-
-      <a href="/auth/register/">Register</a>
-      <button>Login</button>
+      <div class="login-click">
+        <button id="login-submit-button" type="submit" class="login-button">
+          LOGIN
+        </button>
+      </div>
+      <a href="/auth/register/" class="switch-register" >REGISTER</a>
     </form>
   </body>
 </html>

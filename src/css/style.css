@@ -8,4 +8,29 @@
   text-align: center;
   padding-top: 1rem;
 }
-
+.slogan {
+  color: #a9a8a8;
+  margin: 0;
+}
+.form-top {
+  text-align: center;
+}
+.gradient-input::placeholder {
+  color:#a9a8a8;
+}
+.gradient-text{
+   background-image: linear-gradient(135deg, #9747ff, #07d8ba);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.gradient-input {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  background-image: linear-gradient(white, white),
+    linear-gradient(135deg, #9747ff, #07d8ba);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
