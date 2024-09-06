@@ -1,22 +1,124 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noroff FED2 JS2 CA</title>
+    <script type="module" src="/src/app.js"></script>
+    <link rel="stylesheet" href="/src/css/home.css" />
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Noroff FED2 JS2 CA</title>
-  <script type="module" src="/src/app.js"></script>
-</head>
-
-<body>
-  <img src="/images/noroff-logo.png" alt="Noroff Logo" />
-
-  <h1>Home</h1>
-
-  <a href="/profile/">My Profile</a>
-  <a href="/auth/login/">Login</a>
-  <a href="/auth/register/">Register</a>
-  <button>Logout</button>
-</body>
+  <body>
+    <div class="wrapper">
+      <main class="content">
+        <header class="header">
+          <div class="header-left">
+            <img class="logo" src="/asset/snappo.png" alt="Snappo logo" />
+          </div>
+          <div class="search-bar">
+            <input type="text" placeholder="Search...." class="search-input" />
+            <button class="search-btn">
+              <ion-icon class="search-icon" name="search-outline"></ion-icon>
+            </button>
+          </div>
+          <div class="header-right">
+            <div class="icon-container">
+              <a href="/profile/" class="icon">
+                <ion-icon
+                  class="single-icon"
+                  size="large"
+                  name="newspaper-outline"
+                ></ion-icon>
+              </a>
+              <a href="/auth/register/" class="icon">
+                <ion-icon
+                  class="single-icon"
+                  size="large"
+                  name="person-circle-outline"
+                ></ion-icon>
+              </a>
+              <a href="/auth/logout/" class="icon">
+                <ion-icon
+                  class="single-icon"
+                  size="large"
+                  name="log-out-outline"
+                ></ion-icon>
+              </a>
+            </div>
+          </div>
+        </header>
+        <div class="body-top">
+          <div class="avatar">
+            <img class="avatar-img" src="/asset/avatar.jpg" />
+            <p class="username">Emily</p>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-button">All post</button>
+            <ion-icon
+              class="dropdown-icon"
+              name="caret-down-outline"
+            ></ion-icon>
+            <div class="dropdown-content">
+              <a href="#">All post</a>
+              <a href="#">My post</a>
+              <a href="#">Groups post</a>
+            </div>
+          </div>
+        </div>
+        <div class="body-container">
+          <input
+            type="text"
+            placeholder="What are you thinking about?"
+            class="status-input"
+          />
+        </div>
+<div class="container">
+        <div class="post-card">
+             <div class="user-info">
+            <img class="avatar" src="/asset/avatar-test.jpg" alt="Avatar">
+            <div class="user-details">
+                <p class="username">Jann</p>
+                <p class="time">1 day ago</p>
+            </div>
+            </div>
+             <p class="post-content">One day, I'll travel the world and explore different cultures.</p>
+             <div class="interaction-bar">
+            <div class="likes">
+                <ion-icon class="heart" name="heart-outline"></ion-icon>
+                <p>3</p>
+            </div>
+            <hr>
+            <div class="actions">
+                <div class="action">
+                    <ion-icon class="like-button"name="thumbs-up-outline"></ion-icon>
+                <p>Like</p>
+                  </div>
+                <div class="action">
+                    <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                    <p>Comment</p>
+                </div>
+                <div class="action">
+                    <ion-icon name="share-social-outline"></ion-icon>
+                    <p>Share</p>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+      </main>
+    </div>
+    <footer class="footer">
+      <p>&copy; 2024 Snappo. All rights reserved.</p>
+    </footer>
+  </body>
 </html>

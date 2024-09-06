@@ -11,74 +11,70 @@
   </head>
 
   <body>
-    <div class="form-top">
-      <img class="logo" src="/asset/snappo.png" alt="Snappo logo" />
-      <h1 class="slogan">Connect. Share. Inspire</h1>
+    <div class="wrapper">
+      <main class="content">
+        <div class="form-top">
+          <img class="logo" src="/asset/snappo.png" alt="Snappo logo" />
+          <h1 class="slogan">Connect. Share. Inspire</h1>
+        </div>
+        <form class="form" name="register">
+          <div class="register-form">
+            <label class="gradient-text" for="name">Name</label>
+            <input
+              id="name"
+              type="text"
+              name="name"
+              required
+              maxlength="20"
+              pattern="^[\w]+$"
+              title="Please enter a username using only letters and numbers"
+              placeholder="Max 20 characters"
+              class="gradient-input"
+            />
+
+            <label class="gradient-text" for="email">Email</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              required
+              pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+              title="Please enter a valid noroff.no or stud.noroff.no address"
+              placeholder="Email with @(stud.)noroff.no"
+              class="gradient-input"
+            />
+
+            <label class="gradient-text" for="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              required
+              minlength="8"
+              placeholder="Min 08 characters"
+              class="gradient-input"
+            />
+          </div>
+          <div class="register-click">
+            <button
+              id="register-submit-button"
+              type="submit"
+              class="register-button"
+            >
+              REGISTER
+            </button>
+          </div>
+          <hr />
+        </form>
+
+        <div class="form-text">Already registered?</div>
+        <div class="login-link">
+          <a href="/auth/login/" class="switch-login">LOGIN</a>
+        </div>
+      </main>
     </div>
-    <form  class="form" name="register">
-    <div class="register-form">
-      
-     
-          <label  class="gradient-text" for="name">Name</label>
-          <input
-            id="name"
-            type="text"
-            name="name"
-            required
-            maxlength="20"
-            pattern="^[\w]+$"
-            title="Please enter a username using only letters and numbers"
-            placeholder="Max 20 characters"
-            class="gradient-input"
-          />
-        
-
-       
-          <label  class="gradient-text" for="email">Email</label>
-          <input
-            id="email"
-            type="email"
-            name="email"
-            required
-            pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
-            title="Please enter a valid noroff.no or stud.noroff.no address"
-            placeholder="Email with @(stud.)noroff.no"
-          class="gradient-input"
-           
-          />
-        
-
-   
-          <label  class="gradient-text" for="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            required
-            minlength="8"
-            placeholder="Min 08 characters"
-          class="gradient-input"
-          
-          />
-        
-        <div class="register-click">
-        <button
-          id="register-submit-button"
-          type="submit"
-          class="register-button"
-        >
-          REGISTER
-        </button>
-         </div>
-         <hr>
-         
-      </form>
-      </div>
-      <div class="form-text">
-        Already registered?
-      </div>
-      <div class="login-link">
-   <a href="/auth/login/"class="switch-login" >LOGIN</a>
-   </div>
+    <footer class="footer">
+      <p>&copy; 2024 Snappo. All rights reserved.</p>
+    </footer>
   </body>
 </html>
