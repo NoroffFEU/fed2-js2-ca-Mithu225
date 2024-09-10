@@ -4,64 +4,7 @@
   box-sizing: border-box;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #fefefe;
-  padding: 10px 20px;
-}
 
-.search-bar {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.search-input {
-  width: 50%;
-  padding: 8px 16px;
-  font-size: 16px;
-  border: 1px solid #ddd;
-  border-radius: 25px;
-  outline: none;
-}
-
-.search-btn {
-  cursor: pointer;
-  border: none;
-  margin-left: -40px;
-  background-color: white;
-}
-
-.search-icon {
-  font-size: 18px;
-  color: #a9a8a8;
-}
-
-.header-right {
-  display: flex;
-  gap: 15px;
-}
-
-.icon-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.icon {
-  width: 2.5rem;
-  height: 2.5rem;
-  background: linear-gradient(90deg, #a060f0, #5cc9f5);
-  padding: 4px;
-  border-radius: 5px;
-  transition: transform 0.3s;
-}
-
-.single-icon {
-  color: white;
-}
 .body-container {
   text-align: center;
 }

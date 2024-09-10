@@ -1,16 +1,111 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Noroff FED2 JS2 CA</title>
     <script type="module" src="/src/app.js"></script>
+    <link rel="stylesheet" href="/src/css/home.css" />
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="stylesheet" href="/src/css/create.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </head>
   <body>
-    <h1>Create Post</h1>
+    <header class="header">
+      <div class="header-left">
+        <img class="logo" src="/asset/snappo.png" alt="Snappo logo" />
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search...." class="search-input" />
+        <button class="search-btn">
+          <ion-icon class="search-icon" name="search-outline"></ion-icon>
+        </button>
+      </div>
+      <div class="header-right">
+        <div class="icon-container">
+          <a href="/profile/" class="icon">
+            <ion-icon
+              class="single-icon"
+              size="large"
+              name="newspaper-outline"
+            ></ion-icon>
+          </a>
+          <a href="/auth/register/" class="icon">
+            <ion-icon
+              class="single-icon"
+              size="large"
+              name="person-circle-outline"
+            ></ion-icon>
+          </a>
+          <a href="/auth/logout/" class="icon">
+            <ion-icon
+              class="single-icon"
+              size="large"
+              name="log-out-outline"
+            ></ion-icon>
+          </a>
+        </div>
+      </div>
+    </header>
+    <div class="container-title">
+      <h1>Create New Post</h1>
+    </div>
+    
 
-    <form name="createPost">
-      <button>Create Post</button>
-    </form>
+    <div class="new-post">
+      <form name="createPost">
+        <div class="edit-container">
+          <label class="gradient-text"for="post-title">Title:</label>
+          <input class="gradient-input" type="text" id="post-title" name="post-title" required />
+
+          <label class="gradient-text" for="post-content">Content:</label>
+          <textarea
+          class="gradient-input"
+            aria-label="message"
+            rows="10"
+            cols="45"
+            name="comment"
+            form="userform"
+            id="message"
+          ></textarea>
+
+          <label class="gradient-text" for="key-words">Tags:</label>
+          <input class="gradient-input" type="url" id="keywords" name="key-words" />
+
+          <label class="gradient-text" for="post-image">Image URL:</label>
+          <input class="gradient-input" type="url" id="post-image" name="post-image" />
+
+          <label class="gradient-text" for="image-alt">Image Alt:</label>
+          <input class="gradient-input" type="url" id="post-image-alt" name="image-alt" />
+        </div>
+        <div class="button-edit-page">
+          <button
+            id="create-post-submit-button"
+            type="submit"
+            class="button button-submit"
+          >
+            Create Post
+          </button>
+          <button
+            id="cancel-post-submit-button"
+            type="button"
+            class="button button-cancel"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2024 Snappo. All rights reserved.</p>
+    </footer>
   </body>
 </html>
