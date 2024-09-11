@@ -16,11 +16,7 @@ h1 {
   padding: 3rem;
   justify-content: center;
 }
-.button-submit,
-.button-cancel {
-  background-color: var(--color-button-sub);
-  color: var(--color-text-light);
-}
+
 
 .container-title {
   color: var(--color-text-gray);

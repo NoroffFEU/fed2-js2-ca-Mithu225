@@ -58,8 +58,7 @@
 .dropdown {
   position: relative;
   display: inline-block;
-  border: 2px solid #b890f4; /* Border for dropdown button */
-  padding: 10px;
+  border: 2px solid #b890f4; 
   border-radius: 4px;
   cursor: pointer;
   text-align: right;
