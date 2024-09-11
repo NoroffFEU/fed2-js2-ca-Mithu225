@@ -57,17 +57,22 @@
     <div class="container-title">
       <h1>Create New Post</h1>
     </div>
-    
 
-    <div class="new-post">
-      <form name="createPost">
+    
+      <form class="form" name="createPost">
         <div class="edit-container">
-          <label class="gradient-text"for="post-title">Title:</label>
-          <input class="gradient-input" type="text" id="post-title" name="post-title" required />
+          <label class="gradient-text" for="post-title">Title:</label>
+          <input
+            class="gradient-input"
+            type="text"
+            id="post-title"
+            name="post-title"
+            required
+          />
 
           <label class="gradient-text" for="post-content">Content:</label>
           <textarea
-          class="gradient-input"
+            class="gradient-input"
             aria-label="message"
             rows="10"
             cols="45"
@@ -77,13 +82,28 @@
           ></textarea>
 
           <label class="gradient-text" for="key-words">Tags:</label>
-          <input class="gradient-input" type="url" id="keywords" name="key-words" />
+          <input
+            class="gradient-input"
+            type="url"
+            id="keywords"
+            name="key-words"
+          />
 
           <label class="gradient-text" for="post-image">Image URL:</label>
-          <input class="gradient-input" type="url" id="post-image" name="post-image" />
+          <input
+            class="gradient-input"
+            type="url"
+            id="post-image"
+            name="post-image"
+          />
 
           <label class="gradient-text" for="image-alt">Image Alt:</label>
-          <input class="gradient-input" type="url" id="post-image-alt" name="image-alt" />
+          <input
+            class="gradient-input"
+            type="url"
+            id="post-image-alt"
+            name="image-alt"
+          />
         </div>
         <div class="button-edit-page">
           <button
@@ -102,7 +122,7 @@
           </button>
         </div>
       </form>
-    </div>
+   
 
     <footer class="footer">
       <p>&copy; 2024 Snappo. All rights reserved.</p>
