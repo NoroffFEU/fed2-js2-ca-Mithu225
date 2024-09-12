@@ -56,13 +56,15 @@
     </header>
 
     <div class="profile-details">
-      <div class="avatar">
+      <div class="avatar-profile">
         <img class="avatar-img" src="/asset/avatar.jpg" />
       </div>
 
       <div class="edit-profile">
         <p class="username">Emily</p>
-        <ion-icon name="create-outline"></ion-icon>
+        <a href="#">
+          <ion-icon class="edit-icon"name="create-outline"></ion-icon
+        ></a>
       </div>
     </div>
 
@@ -76,13 +78,21 @@
         <p>123</p>
       </div>
     </div>
-    <div class="container">
+    <div class="post-container">
       <div class="post-card">
         <div class="user-info">
           <img class="avatar" src="/asset/avatar.jpg" alt="Avatar" />
           <div class="user-details">
+            <div class="user">
             <p class="username">Emily</p>
             <p class="time">1 day ago</p>
+            </div>
+            <div class="edit-post">
+             <a href="/post/edit/index.html">
+          <ion-icon class="edit-icon"name="create-outline"></ion-icon
+        ></a>
+        <ion-icon class="delete-icon"name="trash-outline"></ion-icon>
+          </div>
           </div>
         </div>
         <p class="post-content">
