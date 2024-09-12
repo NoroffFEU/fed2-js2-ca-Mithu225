@@ -17,14 +17,13 @@ h1 {
   justify-content: center;
 }
 
-
 .container-title {
   color: var(--color-text-gray);
   padding: 1rem 5rem;
 }
 
 .button-submit,
-.button-cancel {
+.button-edit, .button-cancel {
   background: linear-gradient(135deg, #07c0d8, #9747ff);
   color: white;
   padding: 1rem;

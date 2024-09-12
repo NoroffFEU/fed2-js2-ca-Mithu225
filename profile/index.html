@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Noroff FED2 JS2 CA</title>
     <script type="module" src="/src/app.js"></script>
+    <script type="module" src="/src/js/post-delete.js"></script>
     <link rel="stylesheet" href="/src/css/style.css" />
     <link rel="stylesheet" href="/src/css/profile.css" />
     <script
@@ -63,7 +64,7 @@
       <div class="edit-profile">
         <p class="username">Emily</p>
         <a href="#">
-          <ion-icon class="edit-icon"name="create-outline"></ion-icon
+          <ion-icon class="edit-icon" name="create-outline"></ion-icon
         ></a>
       </div>
     </div>
@@ -80,21 +81,24 @@
     </div>
     <div class="post-container">
       <div class="post-card">
-        <div class="user-info">
+        <div class="post-info">
+        <div class="user-info" id="post">
           <img class="avatar" src="/asset/avatar.jpg" alt="Avatar" />
-          <div class="user-details">
-            <div class="user">
+        </div>
+        <div class="user-details">
+          <div class="user">
             <p class="username">Emily</p>
             <p class="time">1 day ago</p>
-            </div>
-            <div class="edit-post">
-             <a href="/post/edit/index.html">
-          <ion-icon class="edit-icon"name="create-outline"></ion-icon
-        ></a>
-        <ion-icon class="delete-icon"name="trash-outline"></ion-icon>
+          </div>
+          <div class="edit-post">
+            <a href="/post/edit/index.html">
+              <ion-icon class="edit-icon" name="create-outline"></ion-icon
+            ></a>
+            <ion-icon class="delete-icon" name="trash-outline"></ion-icon>
           </div>
           </div>
         </div>
+
         <p class="post-content">
           One day, I'll travel the world and explore different cultures.
         </p>

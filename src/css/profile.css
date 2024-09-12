@@ -8,9 +8,7 @@
   flex-direction: column;
   align-items: center;
 }
-.edit-icon, .delete-icon {
-  color: #9747ff;
-}
+
 .avatar-profile {
   margin-bottom: 10px;
 }
@@ -64,21 +62,5 @@ ion-icon {
   margin-right: 10px;
 }
 
-.user-info {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 
-.user-details {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%; 
-}
 
-.edit-post {
-  margin-left: auto; 
-  display: flex; 
-  gap: 10px; 
-}
