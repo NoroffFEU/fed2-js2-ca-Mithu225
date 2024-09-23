@@ -1,10 +1,15 @@
 import { API_KEY } from "./constants";
 
-export function headers() {
-  const headers = new Headers();
+export function getHeaders() {
+  const headers = {};
+  const token = localStorage.getItem("token");
 
   if (API_KEY) {
-    headers.append("X-Noroff-API-Key", API_KEY);
+    headers["X-Noroff-API-Key"] = API_KEY;
+  }
+
+  if (token) {
+    headers["Authorization"] = `Bearer ${token}`;
   }
 
   return headers;

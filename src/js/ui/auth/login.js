@@ -5,6 +5,19 @@ export async function onLogin(event) {
   const form = event.target;
   const email = form.elements["email"].value;
   const password = form.elements["password"].value;
-  const result = await login({ email, password });
-  console.log(result);
+  try {
+    const result = await login({ email, password });
+    localStorage.setItem("token", result.data.accessToken);
+    window.location.href = "/";
+  } catch (error) {
+    console.log(error);
+    const errors = error.response.data.errors;
+    const errorsElm = document.getElementById("errors");
+
+    const newErrors = errors.map((item) => {
+      return `<p>${item.message}</p>`;
+    });
+
+    errorsElm.innerHTML = newErrors;
+  }
 }
