@@ -4,13 +4,12 @@
   box-sizing: border-box;
 }
 
-
 .body-container {
   text-align: center;
 }
 .status-input {
-  width: 50%;
-  padding: 8px 16px;
+  width: 30%;
+  padding: 8px 24px;
   font-size: 16px;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -44,7 +43,7 @@
 .dropdown {
   position: relative;
   display: inline-block;
-  border: 2px solid #b890f4; 
+  border: 2px solid #b890f4;
   border-radius: 4px;
   cursor: pointer;
   text-align: right;
@@ -55,7 +54,7 @@
   color: black;
   border: none;
   font-size: 1rem;
-  padding:1rem;
+  padding: 1rem;
 }
 
 .dropdown-button:focus {

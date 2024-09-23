@@ -178,6 +178,7 @@ footer p {
   align-items: center;
   height: 100%;
   padding: 2rem 0;
+  flex-direction: column;
 }
 .post-info {
   display: flex;
