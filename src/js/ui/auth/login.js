@@ -8,6 +8,7 @@ export async function onLogin(event) {
   try {
     const result = await login({ email, password });
     localStorage.setItem("token", result.data.accessToken);
+    localStorage.setItem("user", JSON.stringify(result.data));
     window.location.href = "/";
   } catch (error) {
     console.log(error);

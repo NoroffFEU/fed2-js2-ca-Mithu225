@@ -2,24 +2,46 @@ import { readPosts } from "../../api/post/read";
 import { authGuard } from "../../utilities/authGuard";
 
 authGuard();
+const userFromLocal = localStorage.getItem("user");
+const user = userFromLocal != null ? JSON.parse(userFromLocal) : {};
 
-document.getElementById("statusInput").addEventListener("click", function () {
-  window.location.href = "/post/create/index.html";
-});
+console.log(user);
 
 const result = await readPosts();
 
-const data = result.data;
-console.log(data);
+const allpost = result.data;
+const mypost = allpost.filter((item) => {
+  return item.author.name === user.name;
+});
 
-const response = data.map((item) => {
-  return `
+document.getElementById(
+  "avatar-home"
+).innerHTML = `<img class="avatar-img" src="${user.avatar.url}" />
+            <p class="username">${user.name}</p>`;
+
+document.getElementById("statusInput").addEventListener("click", () => {
+  window.location.href = "/post/create/index.html";
+});
+
+document.getElementById("selected-all-post").addEventListener("click", () => {
+  document.getElementById("selected-post").innerHTML = `All post`;
+  renderpost(allpost);
+});
+
+document.getElementById("selected-my-post").addEventListener("click", () => {
+  document.getElementById("selected-post").innerHTML = `My post`;
+  renderpost(mypost);
+});
+
+function renderpost(posts) {
+  const response = posts.map((item) => {
+    return `
           <div class="post-card">
             <div class="post-info">
               <div class="user-info" id="post">
                 <img class="avatar" src="${item.author.avatar.url}" alt="${
-    item.author.avatar.alt
-  }" />
+      item.author.avatar.alt
+    }" />
               </div>
               <div class="user-details">
                 <div class="user">
@@ -43,9 +65,9 @@ const response = data.map((item) => {
             </p>
             <div class="interaction-bar">
             ${
-              item.media
+              item.media && item.media.url
                 ? `<div class="upload-content">
-                <img class="upload-img" src="${item.media}" />
+                <img class="upload-img" src="${item.media.url}" />
               </div>`
                 : ""
             }
@@ -74,5 +96,8 @@ const response = data.map((item) => {
 
 
 `;
-});
-document.getElementById("post-container").innerHTML = response;
+  });
+  document.getElementById("post-container").innerHTML = response;
+}
+
+renderpost(allpost);

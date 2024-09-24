@@ -59,19 +59,16 @@
           </div>
         </header>
         <div class="body-top">
-          <div class="avatar">
-            <img class="avatar-img" src="/asset/avatar.jpg" />
-            <p class="username">Emily</p>
-          </div>
+          <div class="avatar" id="avatar-home"></div>
           <div class="dropdown">
-            <button class="dropdown-button">All post</button>
+            <button class="dropdown-button" id="selected-post">All post</button>
             <ion-icon
               class="dropdown-icon"
               name="caret-down-outline"
             ></ion-icon>
             <div class="dropdown-content">
-              <a href="#">All post</a>
-              <a href="/profile/index.html">My post</a>
+              <button id="selected-all-post">All post</button>
+              <button id="selected-my-post">My post</button>
             </div>
           </div>
         </div>
@@ -84,55 +81,7 @@
           />
         </div>
 
-        <div class="post-container" id="post-container">
-          <div class="post-card">
-            <div class="post-info">
-              <div class="user-info" id="post">
-                <img class="avatar" src="/asset/avatar.jpg" alt="Avatar" />
-              </div>
-              <div class="user-details">
-                <div class="user">
-                  <p class="username">Emily</p>
-                  <p class="time">1 day ago</p>
-                </div>
-                <div class="edit-post">
-                  <a href="/post/edit/index.html">
-                    <ion-icon class="edit-icon" name="create-outline"></ion-icon
-                  ></a>
-                  <ion-icon class="delete-icon" name="trash-outline"></ion-icon>
-                </div>
-              </div>
-            </div>
-
-            <p class="post-content">
-              One day, I'll travel the world and explore different cultures.
-            </p>
-            <div class="interaction-bar">
-              <div class="upload-content">
-                <img class="upload-img" src="/asset/travel.jpg" alt="Photos" />
-              </div>
-              <div class="likes">
-                <ion-icon class="heart" name="heart-outline"></ion-icon>
-                <p>3</p>
-              </div>
-              <hr />
-              <div class="actions">
-                <div class="action">
-                  <ion-icon name="thumbs-up-outline"></ion-icon>
-                  <p>Like</p>
-                </div>
-                <div class="action">
-                  <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-                  <p>Comment</p>
-                </div>
-                <div class="action">
-                  <ion-icon name="share-social-outline"></ion-icon>
-                  <p>Share</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="post-container" id="post-container">loading.....</div>
       </main>
     </div>
     <footer class="footer">
