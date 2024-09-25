@@ -1,4 +1,5 @@
 import { readPosts } from "../../api/post/read";
+import { onDeletePost } from "../../ui/post/delete";
 import { authGuard } from "../../utilities/authGuard";
 
 authGuard();
@@ -55,11 +56,13 @@ function renderpost(posts) {
                   <button id="edit-button" type="button" data-id="${item.id}">
                     <ion-icon class="edit-icon" name="create-outline">
                     </ion-icon>
-                  </button>`
+                  </button>
+                  <button id="delete-button" type="button" data-id="${item.id}">
+                    <ion-icon class="delete-icon" name="trash-outline"></ion-icon></button>
+                  
+                  `
                     : ""
                 }
-                <button id="delete-button">
-                  <ion-icon class="delete-icon" name="trash-outline"></ion-icon></button>
                 </div>
               </div>
             </div>
@@ -109,11 +112,19 @@ function renderpost(posts) {
 
   document.querySelectorAll("#edit-button").forEach((button) => {
     button.addEventListener("click", () => {
-      console.log("ghjj");
       const buttonDataId = button.getAttribute("data-id");
       localStorage.setItem("post-id", buttonDataId);
 
       window.location.href = "/post/edit/";
+    });
+  });
+
+  document.querySelectorAll("#delete-button").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const buttonDeleteId = button.getAttribute("data-id");
+      console.log(buttonDeleteId);
+      await onDeletePost(buttonDeleteId);
+      renderpost(posts.filter((item) => item.id !== buttonDeleteId));
     });
   });
 }

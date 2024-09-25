@@ -95,3 +95,7 @@
   border: none;
   background-color: white;
 }
+#message-box {
+  text-align: center;
+  padding-bottom: 1rem;
+}

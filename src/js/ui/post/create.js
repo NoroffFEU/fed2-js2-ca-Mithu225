@@ -7,7 +7,7 @@ export async function onCreatePost(event) {
   const title = form.elements["title"].value;
   const body = form.elements["body"].value;
   const tags = form.elements["tags"].value;
-  const media = form.elements["media"].value;
+  const url = form.elements["image-url"].value;
   const alt = form.elements["image-alt"].value;
 
   const data = {
@@ -15,18 +15,15 @@ export async function onCreatePost(event) {
     body: body,
     tags: tags.split(","),
     media: {
-      url: media,
+      url: url,
       alt: alt,
     },
   };
-
-  console.log(data);
 
   try {
     await createPost(data);
     window.location.href = "/";
   } catch (error) {
-    console.log(error);
     const errors = error.response.data.errors;
     const errorsElm = document.getElementById("errors");
 

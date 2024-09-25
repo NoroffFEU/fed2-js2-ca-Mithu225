@@ -70,7 +70,9 @@ body {
   border-radius: 5px;
   transition: transform 0.3s;
 }
-
+.logo {
+  cursor: pointer;
+}
 .single-icon {
   color: white;
 }

@@ -7,7 +7,7 @@ export async function onUpdatePost(event) {
   const title = form.elements["title"].value;
   const body = form.elements["body"].value;
   const tags = form.elements["tags"].value;
-  const media = form.elements["media"].value;
+  const url = form.elements["url"].value;
   const alt = form.elements["image-alt"].value;
   const postId = form.elements["post-id"].value;
 
@@ -16,12 +16,10 @@ export async function onUpdatePost(event) {
     body: body,
     tags: tags.split(","),
     media: {
-      url: media,
+      url: url,
       alt: alt,
     },
   };
-
-  console.log(data);
 
   try {
     await updatePost(postId, data); 
@@ -42,11 +40,3 @@ export async function onUpdatePost(event) {
 
 
 
-
-////
-
-const abc = { a: 1}
-
-abc.a = 5
-
-// abc = { a: 5}
