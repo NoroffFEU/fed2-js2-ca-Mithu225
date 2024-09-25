@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Noroff FED2 JS2 CA</title>
     <script type="module" src="/src/app.js"></script>
-<link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="stylesheet" href="/src/css/style.css" />
     <link rel="stylesheet" href="/src/css/edit.css" />
     <link rel="stylesheet" href="/src/css/create.css" />
     <script
@@ -56,74 +56,71 @@
       </div>
     </header>
 
-  <body>
     <div class="container-title">
       <h1>Edit Post</h1>
     </div>
 
-    
-      <form class="form" name="createPost">
-        <div class="edit-container">
-          <label class="gradient-text" for="post-title">Title:</label>
-          <input
-            class="gradient-input"
-            type="text"
-            id="post-title"
-            name="post-title"
-            required
-          />
+    <form class="form" name="updatePost">
+      <div class="edit-container">
+        <label class="gradient-text" for="post-title">Title:</label>
+        <input
+          class="gradient-input"
+          type="text"
+          id="post-title"
+          name="title"
+          required
+        />
 
-          <label class="gradient-text" for="post-content">Content:</label>
-          <textarea
-            class="gradient-input"
-            aria-label="message"
-            rows="10"
-            cols="45"
-            name="comment"
-            form="userform"
-            id="message"
-          ></textarea>
+        <label class="gradient-text" for="post-content">Content:</label>
+        <textarea
+          class="gradient-input"
+          aria-label="message"
+          rows="10"
+          cols="45"
+          name="body"
+          id="message"
+        ></textarea>
 
-          <label class="gradient-text" for="key-words">Tags:</label>
-          <input
-            class="gradient-input"
-            type="strings"
-            id="keywords"
-            name="key-words"
-          />
+        <label class="gradient-text" for="key-words">Tags:</label>
+        <input
+          class="gradient-input"
+          type="strings"
+          id="keywords"
+          name="tags"
+        />
 
-          <label class="gradient-text" for="post-image">Image URL:</label>
-          <input
-            class="gradient-input"
-            type="url"
-            id="post-image"
-            name="post-image"
-          />
+        <label class="gradient-text" for="post-image">Image URL:</label>
+        <input
+          class="gradient-input"
+          type="url"
+          id="post-image"
+          name="image-url"
+        />
 
-          <label class="gradient-text" for="image-alt">Image Alt:</label>
-          <input
-            class="gradient-input"
-            type="url"
-            id="post-image-alt"
-            name="image-alt"
-          />
-        </div>
-        <div class="button-edit-page">
-          <button
-            id="edit-post-submit-button"
-            type="submit"
-            class="button button-edit"
-          >
-            Update Post
-          </button>
-          <button
-            id="cancel-post-submit-button"
-            type="button"
-            class="button button-cancel"
-          >
-            Cancel
-          </button>
-        </div>
-      </form>
+        <label class="gradient-text" for="image-alt">Image Alt:</label>
+        <input
+          class="gradient-input"
+          type="url"
+          id="post-image-alt"
+          name="image-alt"
+        />
+      </div>
+      <div class="button-edit-page">
+        <button
+          id="edit-post-submit-button"
+          type="submit"
+          class="button button-edit"
+        >
+          Update Post
+        </button>
+        <button
+          id="cancel-post-submit-button"
+          type="button"
+          class="button button-cancel"
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
   </body>
 </html>

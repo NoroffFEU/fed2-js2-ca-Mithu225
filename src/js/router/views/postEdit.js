@@ -4,15 +4,13 @@ import { authGuard } from "../../utilities/authGuard";
 
 authGuard();
 
-const result = await readPost("?????");
+const result = await readPost("1120");
 const form = document.forms.updatePost;
-
+console.log(result);
 form.elements["title"].value = result.data.title;
-form.elements["body"].value;
-form.elements["tags"].value;
-form.elements["media"].value;
-form.elements["image-alt"].value;
-form.elements["post-id"].value;
-
+form.elements["body"].value = result.data.body;
+form.elements["tags"].value = result.data.tags;
+form.elements["image-url"].value = result.data.media.url;
+form.elements["image-alt"].value = result.data.media.alt;
 
 form.addEventListener("submit", onUpdatePost);

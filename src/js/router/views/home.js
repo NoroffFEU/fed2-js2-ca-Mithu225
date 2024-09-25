@@ -20,7 +20,7 @@ document.getElementById(
             <p class="username">${user.name}</p>`;
 
 document.getElementById("statusInput").addEventListener("click", () => {
-  window.location.href = "/post/create/index.html";
+  window.location.href = "/post/create/";
 });
 
 document.getElementById("selected-all-post").addEventListener("click", () => {
@@ -48,20 +48,28 @@ function renderpost(posts) {
                   <p class="username">${item.author.name}</p>
                   <p class="time">${item.created}</p>
                 </div>
-                <div class="edit-post">
-                  <a href="/post/edit/index.html">
+                <div class="edit-post" >
+                ${
+                  user.name === item.author.name
+                    ? `
+                  <a href="/post/edit/" id="edit-button">
                     <ion-icon class="edit-icon" name="create-outline"></ion-icon
-                  ></a>
+                  ></a>`
+                    : ""
+                }
                   <ion-icon class="delete-icon" name="trash-outline"></ion-icon>
                 </div>
               </div>
             </div>
 
             <p class="post-content">
-              ${item.body}
+              ${item.title}
             </p>
              <p class="post-content">
-              ${item.title}
+              ${item.body}
+            </p>
+            <p class="post-content">
+              ${item.id}
             </p>
             <div class="interaction-bar">
             ${
@@ -101,3 +109,6 @@ function renderpost(posts) {
 }
 
 renderpost(allpost);
+document.getElementById("edit-button").addEventListener("click", () => {
+  window.location.href = "/post/edit/";
+});
