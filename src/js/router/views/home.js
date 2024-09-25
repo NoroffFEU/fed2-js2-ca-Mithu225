@@ -52,12 +52,14 @@ function renderpost(posts) {
                 ${
                   user.name === item.author.name
                     ? `
-                  <a href="/post/edit/" id="edit-button">
-                    <ion-icon class="edit-icon" name="create-outline"></ion-icon
-                  ></a>`
+                  <button id="edit-button" type="button" data-id="${item.id}">
+                    <ion-icon class="edit-icon" name="create-outline">
+                    </ion-icon>
+                  </button>`
                     : ""
                 }
-                  <ion-icon class="delete-icon" name="trash-outline"></ion-icon>
+                <button id="delete-button">
+                  <ion-icon class="delete-icon" name="trash-outline"></ion-icon></button>
                 </div>
               </div>
             </div>
@@ -68,9 +70,7 @@ function renderpost(posts) {
              <p class="post-content">
               ${item.body}
             </p>
-            <p class="post-content">
-              ${item.id}
-            </p>
+          
             <div class="interaction-bar">
             ${
               item.media && item.media.url
@@ -106,9 +106,16 @@ function renderpost(posts) {
 `;
   });
   document.getElementById("post-container").innerHTML = response;
+
+  document.querySelectorAll("#edit-button").forEach((button) => {
+    button.addEventListener("click", () => {
+      console.log("ghjj");
+      const buttonDataId = button.getAttribute("data-id");
+      localStorage.setItem("post-id", buttonDataId);
+
+      window.location.href = "/post/edit/";
+    });
+  });
 }
 
 renderpost(allpost);
-document.getElementById("edit-button").addEventListener("click", () => {
-  window.location.href = "/post/edit/";
-});

@@ -90,3 +90,8 @@
 .dropdown.show .dropdown-content {
   display: block;
 }
+#edit-button,
+#delete-button {
+  border: none;
+  background-color: white;
+}

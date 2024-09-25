@@ -4,7 +4,8 @@ import { authGuard } from "../../utilities/authGuard";
 
 authGuard();
 
-const result = await readPost("1120");
+const id = localStorage.getItem("post-id")
+const result = await readPost(id);
 const form = document.forms.updatePost;
 console.log(result);
 form.elements["title"].value = result.data.title;
