@@ -108,6 +108,7 @@ function renderpost(posts) {
 
 `;
   });
+
   document.getElementById("post-container").innerHTML = response;
 
   document.querySelectorAll("#edit-button").forEach((button) => {
@@ -122,9 +123,8 @@ function renderpost(posts) {
   document.querySelectorAll("#delete-button").forEach((button) => {
     button.addEventListener("click", async () => {
       const buttonDeleteId = button.getAttribute("data-id");
-      console.log(buttonDeleteId);
       await onDeletePost(buttonDeleteId);
-      renderpost(posts.filter((item) => item.id !== buttonDeleteId));
+      renderpost(posts.filter((item) => item.id != buttonDeleteId));
     });
   });
 }

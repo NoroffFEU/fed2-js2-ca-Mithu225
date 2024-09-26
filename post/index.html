@@ -6,8 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Noroff FED2 JS2 CA</title>
     <script type="module" src="/src/app.js"></script>
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </head>
   <body>
+     <header class="header">
+      <div class="header-left">
+        <a href="/">
+          <img class="logo" src="/asset/snappo.png" alt="Snappo logo" />
+        </a>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search...." class="search-input" />
+        <button class="search-btn">
+          <ion-icon class="search-icon" name="search-outline"></ion-icon>
+        </button>
+      </div>
+      <div class="header-right">
+        <div class="icon-container">
+          <a href="/profile/" class="icon">
+            <ion-icon
+              class="single-icon"
+              size="large"
+              name="newspaper-outline"
+            ></ion-icon>
+          </a>
+          <a href="/auth/register/" class="icon">
+            <ion-icon
+              class="single-icon"
+              size="large"
+              name="person-circle-outline"
+            ></ion-icon>
+          </a>
+          <a href="/auth/logout/" class="icon">
+            <ion-icon
+              class="single-icon"
+              size="large"
+              name="log-out-outline"
+            ></ion-icon>
+          </a>
+        </div>
+      </div>
+    </header>
+    <div class="container-title">
     <h1>Post Page</h1>
+    </div>
   </body>
 </html>
