@@ -10,6 +10,7 @@ console.log(user);
 
 const result = await readPosts();
 
+
 const allpost = result.data;
 const mypost = allpost.filter((item) => {
   return item.author.name === user.name;
@@ -49,6 +50,8 @@ function renderpost(posts) {
                   <p class="username">${item.author.name}</p>
                   <p class="time">${item.created}</p>
                 </div>
+       
+  
                 <div class="edit-post" >
                 ${
                   user.name === item.author.name
@@ -65,6 +68,7 @@ function renderpost(posts) {
                 }
                 </div>
               </div>
+             
             </div>
 
             <p class="post-content">
@@ -73,7 +77,11 @@ function renderpost(posts) {
              <p class="post-content">
               ${item.body}
             </p>
-          
+               <div class="post-list">
+  <div class="post-item" id="post-1">
+    <button id=see-more type=button data-id="${
+      item.id
+    }">See more..</button></div></div>
             <div class="interaction-bar">
             ${
               item.media && item.media.url
@@ -87,6 +95,7 @@ function renderpost(posts) {
                 <ion-icon class="heart" name="heart-outline"></ion-icon>
                 <p>3</p>
               </div>
+               
               <hr />
               <div class="actions">
                 <div class="action">
@@ -125,6 +134,14 @@ function renderpost(posts) {
       const buttonDeleteId = button.getAttribute("data-id");
       await onDeletePost(buttonDeleteId);
       renderpost(posts.filter((item) => item.id != buttonDeleteId));
+    });
+  });
+
+  document.querySelectorAll("#see-more").forEach((button) => {
+    button.addEventListener("click", () => {
+      const buttonSeemoreID = button.getAttribute("data-id");
+      localStorage.setItem("single-post-id", buttonSeemoreID);
+      window.location.href = "/post/";
     });
   });
 }

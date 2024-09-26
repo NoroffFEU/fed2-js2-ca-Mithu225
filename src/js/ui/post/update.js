@@ -25,7 +25,7 @@ export async function onUpdatePost(event) {
     await updatePost(postId, data); 
     window.location.href = `/post/${postId}`; 
   } catch (error) {
-    console.log(error);
+    
     const errors = error.response?.data?.errors || [];
     const errorsElm = document.getElementById("errors");
 

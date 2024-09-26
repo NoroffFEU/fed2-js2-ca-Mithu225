@@ -6,7 +6,11 @@ body {
   margin: 0;
   padding: 0;
 }
+.container-title {
+  text-align: center;
+  color: #817575;
 
+}
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -76,7 +80,11 @@ body {
 .single-icon {
   color: white;
 }
-
+#edit-button,
+#delete-button {
+  border: none;
+  background-color: white;
+}
 footer {
   margin-top: 3rem;
   width: 100%;

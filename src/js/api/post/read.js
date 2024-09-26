@@ -16,4 +16,16 @@ export async function readPosts(limit = 12, page = 1, tag) {
   return result.data;
 }
 
-export async function readPostsByUser(username, limit = 12, page = 1, tag) {}
+export async function readPostsByUser(username, limit = 12, page = 1, tag) {
+  const result = await axios.get(`${API_SOCIAL_POSTS}/${id}`, {
+    header: getHeaders(),
+  });
+  return result.data;
+}
+
+export async function singlePost(id) {
+  const result = await axios.get(`${API_SOCIAL_POSTS}/${id}?_author=true`, {
+    headers: getHeaders(),
+  });
+  return result.data;
+}

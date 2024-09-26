@@ -90,12 +90,14 @@
 .dropdown.show .dropdown-content {
   display: block;
 }
-#edit-button,
-#delete-button {
-  border: none;
-  background-color: white;
-}
+
 #message-box {
   text-align: center;
   padding-bottom: 1rem;
+}
+#see-more {
+  border: none;
+  background-color: white;
+  color: #875acb;
+  cursor: pointer;
 }
