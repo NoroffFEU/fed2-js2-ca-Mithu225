@@ -11,7 +11,6 @@ export async function onLogin(event) {
     localStorage.setItem("user", JSON.stringify(result.data));
     window.location.href = "/";
   } catch (error) {
-    console.log(error);
     const errors = error.response.data.errors;
     const errorsElm = document.getElementById("errors");
 

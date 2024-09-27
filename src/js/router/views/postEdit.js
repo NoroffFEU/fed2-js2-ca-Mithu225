@@ -8,7 +8,7 @@ authGuard();
 const id = localStorage.getItem("post-id");
 const result = await readPost(id);
 const form = document.forms.updatePost;
-console.log(result);
+
 form.elements["title"].value = result.data.title;
 form.elements["body"].value = result.data.body;
 form.elements["tags"].value = result.data.tags;

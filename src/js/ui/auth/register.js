@@ -11,7 +11,6 @@ export async function onRegister(event) {
     await register({ name, email, password });
     window.location.href = "/auth/login/";
   } catch (error) {
-    console.log(error);
     const errors = error.response.data.errors;
     const errorsElm = document.getElementById("errors");
 

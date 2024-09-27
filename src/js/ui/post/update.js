@@ -1,7 +1,6 @@
 import { updatePost } from "../../api/post/update";
 
 export async function onUpdatePost(event) {
-  console.log("ghhjkkl");
   event.preventDefault();
   const form = event.target;
 
@@ -21,8 +20,6 @@ export async function onUpdatePost(event) {
     },
   };
 
-  console.log(data);
-
   const id = localStorage.getItem("post-id");
   const messageBox = document.getElementById("message-box");
   try {
@@ -35,7 +32,7 @@ export async function onUpdatePost(event) {
       messageBox.style.display = "none";
     }, 3000);
   } catch (error) {
-    console.log(error);
+    
     const errors = error.response?.data?.errors || [];
     const errorsElm = document.getElementById("errors");
 
