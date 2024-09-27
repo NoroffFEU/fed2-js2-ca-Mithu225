@@ -7,8 +7,6 @@ authGuard();
 const userFromLocal = localStorage.getItem("user");
 const user = userFromLocal != null ? JSON.parse(userFromLocal) : {};
 
-console.log(user);
-
 const result = await readPosts();
 
 const allpost = result.data;
@@ -35,6 +33,10 @@ document.getElementById("selected-my-post").addEventListener("click", () => {
   renderpost(mypost);
 });
 
+document.getElementById("profile").addEventListener("click", () => {
+  window.location.href = "/profile/";
+});
+
 document.getElementById("register").addEventListener("click", () => {
   window.location.href = "/auth/register/";
 });
@@ -51,7 +53,11 @@ function renderpost(posts) {
               </div>
               <div class="user-details">
                 <div class="user">
-                  <p class="username">${item.author.name}</p>
+                  <p class="username" id="username" data-username="${
+                    item.author.name
+                  }">
+                  ${item.author.name}
+                </p>
                   <p class="time">${item.created}</p>
                 </div>
        
@@ -123,6 +129,15 @@ function renderpost(posts) {
   });
 
   document.getElementById("post-container").innerHTML = response;
+
+  document.querySelectorAll("#username").forEach((userElm) => {
+    userElm.addEventListener("click", () => {
+      const dataUserName = userElm.getAttribute("data-username");
+      localStorage.setItem("dataUserName", dataUserName);
+
+      window.location.href = "/profile/";
+    });
+  });
 
   document.querySelectorAll("#edit-button").forEach((button) => {
     button.addEventListener("click", () => {

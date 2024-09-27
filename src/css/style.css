@@ -81,6 +81,12 @@ body {
   color: white;
   cursor: pointer;
 }
+#see-more {
+  border: none;
+  background-color: white;
+  color: #875acb;
+  cursor: pointer;
+}
 #edit-button,
 #delete-button {
   border: none;
