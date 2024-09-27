@@ -1,5 +1,5 @@
-import { API_SOCIAL_POSTS } from "../../api/constants";
 import { singlePost } from "../../api/post/read";
+import { onDeletePost } from "../../ui/post/delete";
 
 async function displaySinglePost() {
   try {
@@ -11,7 +11,7 @@ async function displaySinglePost() {
       throw new Error("No post ID found in localStorage");
     }
     const { data: result } = await singlePost(id);
-    console.log(result);
+
     const respone = `
           <div class="post-card">
             <div class="post-info">
@@ -93,7 +93,23 @@ async function displaySinglePost() {
   } catch (error) {
     console.error("Failed to fetch the post:", error);
   }
+
+  document.querySelectorAll("#edit-button").forEach((button) => {
+    button.addEventListener("click", () => {
+      const buttonDataId = button.getAttribute("data-id");
+      localStorage.setItem("post-id", buttonDataId);
+
+      window.location.href = "/post/edit/";
+    });
+  });
+
+  document.querySelectorAll("#delete-button").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const buttonDeleteId = button.getAttribute("data-id");
+      await onDeletePost(buttonDeleteId);
+      renderpost(posts.filter((result) => result.id != buttonDeleteId));
+    });
+  });
 }
 
-// Call the async function to fetch and display the post
 displaySinglePost();

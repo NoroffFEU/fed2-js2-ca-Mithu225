@@ -9,7 +9,6 @@ body {
 .container-title {
   text-align: center;
   color: #817575;
-
 }
 .wrapper {
   display: flex;
@@ -73,12 +72,14 @@ body {
   padding: 4px;
   border-radius: 5px;
   transition: transform 0.3s;
+  border: none;
 }
 .logo {
   cursor: pointer;
 }
 .single-icon {
   color: white;
+  cursor: pointer;
 }
 #edit-button,
 #delete-button {

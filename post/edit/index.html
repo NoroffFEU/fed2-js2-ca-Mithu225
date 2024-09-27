@@ -47,13 +47,13 @@
               name="person-circle-outline"
             ></ion-icon>
           </a>
-          <a href="/auth/logout/" class="icon">
+          <button id="logout-button" class="icon">
             <ion-icon
               class="single-icon"
               size="large"
               name="log-out-outline"
             ></ion-icon>
-          </a>
+          </button>
         </div>
       </div>
     </header>
@@ -102,11 +102,13 @@
         <label class="gradient-text" for="image-alt">Image Alt:</label>
         <input
           class="gradient-input"
-          type="url"
+          type="string"
           id="post-image-alt"
           name="image-alt"
         />
       </div>
+      <div id="message-box"></div>
+      <div id="errors" style="color: red"></div>
       <div class="button-edit-page">
         <button
           id="edit-post-submit-button"

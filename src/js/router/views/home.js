@@ -1,4 +1,5 @@
 import { readPosts } from "../../api/post/read";
+import { onLogout } from "../../ui/auth/logout";
 import { onDeletePost } from "../../ui/post/delete";
 import { authGuard } from "../../utilities/authGuard";
 
@@ -9,7 +10,6 @@ const user = userFromLocal != null ? JSON.parse(userFromLocal) : {};
 console.log(user);
 
 const result = await readPosts();
-
 
 const allpost = result.data;
 const mypost = allpost.filter((item) => {
@@ -35,6 +35,10 @@ document.getElementById("selected-my-post").addEventListener("click", () => {
   renderpost(mypost);
 });
 
+document.getElementById("register").addEventListener("click", () => {
+  window.location.href = "/auth/register/";
+});
+document.getElementById("logout-button").addEventListener("click", onLogout);
 function renderpost(posts) {
   const response = posts.map((item) => {
     return `
@@ -144,6 +148,7 @@ function renderpost(posts) {
       window.location.href = "/post/";
     });
   });
+  document.getElementById("logout-button").addEventListener("click", onLogout);
 }
 
 renderpost(allpost);
