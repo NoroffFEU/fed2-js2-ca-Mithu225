@@ -1,4 +1,5 @@
 import { readPost } from "../../api/post/read";
+import { onLogout } from "../../ui/auth/logout";
 import { onUpdatePost } from "../../ui/post/update";
 import { authGuard } from "../../utilities/authGuard";
 
@@ -22,3 +23,11 @@ document
   });
 
 form.addEventListener("submit", onUpdatePost);
+onClickBySelector("#list", () => {
+  window.location.href = "/";
+});
+
+onClickBySelector("#profile", () => {
+  window.location.href = "/profile/";
+});
+onClickBySelector("#logout-button", onLogout);

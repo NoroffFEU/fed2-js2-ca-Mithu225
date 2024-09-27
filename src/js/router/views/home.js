@@ -1,47 +1,57 @@
-import { readPosts } from "../../api/post/read";
+import { readPosts, readPostsByUser } from "../../api/post/read";
 import { onLogout } from "../../ui/auth/logout";
 import { onDeletePost } from "../../ui/post/delete";
 import { authGuard } from "../../utilities/authGuard";
+import {
+  onRenderBySelector,
+  onClickBySelector,
+  getLoggedUser,
+  formatDateTime,
+} from "../../utilities/utils";
 
 authGuard();
-const userFromLocal = localStorage.getItem("user");
-const user = userFromLocal != null ? JSON.parse(userFromLocal) : {};
+const user = getLoggedUser();
 
-const result = await readPosts();
+onRenderBySelector(
+  "#avatar-home",
+  `<img class="avatar-img" src="${user.avatar.url}" />
+            <p class="username">${user.name}</p>`
+);
 
-const allpost = result.data;
-const mypost = allpost.filter((item) => {
-  return item.author.name === user.name;
-});
-
-document.getElementById(
-  "avatar-home"
-).innerHTML = `<img class="avatar-img" src="${user.avatar.url}" />
-            <p class="username">${user.name}</p>`;
-
-document.getElementById("statusInput").addEventListener("click", () => {
+onClickBySelector("#statusInput", () => {
   window.location.href = "/post/create/";
 });
 
-document.getElementById("selected-all-post").addEventListener("click", () => {
-  document.getElementById("selected-post").innerHTML = `All post`;
-  renderpost(allpost);
+onClickBySelector("#selected-all-post", () => {
+  onRenderBySelector("#selected-post", `All post`);
+  renderpost();
 });
 
-document.getElementById("selected-my-post").addEventListener("click", () => {
-  document.getElementById("selected-post").innerHTML = `My post`;
-  renderpost(mypost);
+onClickBySelector("#selected-my-post", () => {
+  onRenderBySelector("#selected-post", `My post`);
+  renderpost("byUser");
 });
 
-document.getElementById("profile").addEventListener("click", () => {
+onClickBySelector("#list", () => {
+  window.location.href = "/";
+});
+
+onClickBySelector("#profile", () => {
+  localStorage.setItem("dataUserName", user.name);
   window.location.href = "/profile/";
 });
+onClickBySelector("#logout-button", onLogout);
 
-document.getElementById("register").addEventListener("click", () => {
-  window.location.href = "/auth/register/";
-});
-document.getElementById("logout-button").addEventListener("click", onLogout);
-function renderpost(posts) {
+async function renderpost(type) {
+  let posts = [];
+  if (type === "byUser") {
+    const result = await readPostsByUser(user.name);
+    posts = result.data;
+  } else {
+    const result = await readPosts();
+    posts = result.data;
+  }
+
   const response = posts.map((item) => {
     return `
           <div class="post-card">
@@ -58,7 +68,7 @@ function renderpost(posts) {
                   }">
                   ${item.author.name}
                 </p>
-                  <p class="time">${item.created}</p>
+                  <p class="time">${formatDateTime(item.created)}</p>
                 </div>
        
   
@@ -127,8 +137,7 @@ function renderpost(posts) {
 
 `;
   });
-
-  document.getElementById("post-container").innerHTML = response;
+  onRenderBySelector("#post-container", response);
 
   document.querySelectorAll("#username").forEach((userElm) => {
     userElm.addEventListener("click", () => {
@@ -163,7 +172,7 @@ function renderpost(posts) {
       window.location.href = "/post/";
     });
   });
-  document.getElementById("logout-button").addEventListener("click", onLogout);
+  onClickBySelector("#logout-button", onLogout);
 }
 
-renderpost(allpost);
+renderpost();

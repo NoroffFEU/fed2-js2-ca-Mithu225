@@ -92,6 +92,13 @@ body {
   border: none;
   background-color: white;
 }
+
+.delete-icon,
+.edit-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
 footer {
   margin-top: 3rem;
   width: 100%;
@@ -188,6 +195,7 @@ footer p {
 .username {
   font-size: large;
   color: purple;
+  cursor: pointer;
 }
 .post-container {
   display: flex;

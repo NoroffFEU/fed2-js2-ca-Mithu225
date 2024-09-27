@@ -1,41 +1,46 @@
 import { singlePost } from "../../api/post/read";
+import { onLogout } from "../../ui/auth/logout";
 import { onDeletePost } from "../../ui/post/delete";
+import {
+  formatDateTime,
+  getLoggedUser,
+  onClickBySelector,
+} from "../../utilities/utils";
 
 async function displaySinglePost() {
   try {
-    const userFromLocal = localStorage.getItem("user");
-    const user = userFromLocal != null ? JSON.parse(userFromLocal) : {};
+    const user = getLoggedUser();
 
     const id = localStorage.getItem("single-post-id");
     if (!id) {
       throw new Error("No post ID found in localStorage");
     }
-    const { data: result } = await singlePost(id);
+    const { data: item } = await singlePost(id);
 
     const respone = `
           <div class="post-card">
             <div class="post-info">
               <div class="user-info" id="post">
-                <img class="avatar" src="${result.author.avatar.url}" alt="${
-      result.author.avatar.alt
+                <img class="avatar" src="${item.author.avatar.url}" alt="${
+      item.author.avatar.alt
     }" />
               </div>
               <div class="user-details">
                 <div class="user">
-                  <p class="username">${result.author.name}</p>
-                  <p class="time">${result.created}</p>
+                  <p class="username">${item.author.name}</p>
+                  <p class="time">${formatDateTime(item.created)}</p>
                 </div>
        
   
                 <div class="edit-post" >
                 ${
-                  user.name === result.author.name
+                  user.name === item.author.name
                     ? `
-                  <button id="edit-button" type="button" data-id="${result.id}">
+                  <button id="edit-button" type="button" data-id="${item.id}">
                     <ion-icon class="edit-icon" name="create-outline">
                     </ion-icon>
                   </button>
-                  <button id="delete-button" type="button" data-id="${result.id}">
+                  <button id="delete-button" type="button" data-id="${item.id}">
                     <ion-icon class="delete-icon" name="trash-outline"></ion-icon></button>
                   
                   `
@@ -47,19 +52,19 @@ async function displaySinglePost() {
             </div>
 
             <p class="post-content">
-              ${result.title}
+              ${item.title}
             </p>
              <p class="post-content">
-              ${result.body}
+              ${item.body}
             </p>
                <div class="post-list">
-  
-   
+            <div class="post-item" id="post-1">
+              </div></div>
             <div class="interaction-bar">
             ${
-              result.media && result.media.url
+              item.media && item.media.url
                 ? `<div class="upload-content">
-                <img class="upload-img" src="${result.media.url}" />
+                <img class="upload-img" src="${item.media.url}" />
               </div>`
                 : ""
             }
@@ -85,10 +90,7 @@ async function displaySinglePost() {
                 </div>
               </div>
             </div>
-          </div>
-
-
-`;
+          </div>`;
     document.getElementById("post-container").innerHTML = respone;
   } catch (error) {
     console.error("Failed to fetch the post:", error);
@@ -110,6 +112,14 @@ async function displaySinglePost() {
       renderpost(posts.filter((result) => result.id != buttonDeleteId));
     });
   });
+  onClickBySelector("#list", () => {
+    window.location.href = "/";
+  });
+
+  onClickBySelector("#profile", () => {
+    window.location.href = "/profile/";
+  });
+  onClickBySelector("#logout-button", onLogout);
 }
 
 displaySinglePost();

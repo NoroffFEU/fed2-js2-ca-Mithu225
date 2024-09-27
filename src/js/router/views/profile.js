@@ -1,41 +1,56 @@
-import { readPosts } from "../../api/post/read";
+import { readPostsByUser } from "../../api/post/read";
 import { readProfile } from "../../api/profile/read";
+import { onLogout } from "../../ui/auth/logout";
 import { authGuard } from "../../utilities/authGuard";
+import {
+  formatDateTime,
+  getLoggedUser,
+  onClickBySelector,
+  onRenderBySelector,
+} from "../../utilities/utils";
 
 authGuard();
 const dataUserName = localStorage.getItem("dataUserName");
+const user = getLoggedUser();
+const profileResult = await readProfile(dataUserName || user.name);
+const profile = profileResult.data;
 
-const profile = await readProfile(dataUserName);
-const user = profile.data;
+const postsByUserResult = await readPostsByUser(dataUserName || user.name);
+const postsByUser = postsByUserResult.data;
 
-const result = await readPosts();
-const allpost = result.data;
-const mypost = allpost.filter((item) => {
-  return item.author.name === user.name;
-});
-
-document.getElementById("profile-info").innerHTML = `
-<div class="avatar-profile">
-<img class="avatar-img" src="${user.avatar.url}" />
- <div class="edit-profile">
-            <p class="username">${user.name}</p>
+onRenderBySelector(
+  "#profile-info",
+  `<div class="avatar-profile">
+      <img class="avatar-img" src="${profile.avatar.url}" />
+      <div>
+      <div class="edit-profile">
+            <p class="username">${profile.name}</p>
              <a href="#">
           <ion-icon class="edit-icon" name="create-outline"></ion-icon
         ></a>
-        <p class="> 
       </div>
-      <div class="follow-details">
-        <div class="friends">
-          <p>Friends</p>
-          <p>${user._count.followers}</p>
+      </div>
+</div>
+      
+      `
+);
+onRenderBySelector(
+  "#follow-details",
+  `<div class="friends">
+          <p>Follower</p>
+          <p>${profile._count.followers}</p>
         </div>
         <div class="followings">
           <p>Followings</p>
-          <p>${user._count.following}</p>
-        </div>
-      </div>
-      `;
+          <p>${profile._count.following}</p>
 
+        </div>
+        <div class="post-total">
+          <p>Post</p>
+          <p>${profile._count.posts}</p>
+          
+        </div>`
+);
 function renderpost(posts) {
   const response = posts.map((item) => {
     return `
@@ -49,7 +64,7 @@ function renderpost(posts) {
               <div class="user-details">
                 <div class="user">
                   <p class="username">${item.author.name}</p>
-                  <p class="time">${item.created}</p>
+                  <p class="time">${formatDateTime(item.created)}</p>
                 </div>
        
   
@@ -118,6 +133,17 @@ function renderpost(posts) {
 
 `;
   });
-  document.getElementById("post-container").innerHTML = response;
+  onRenderBySelector("#post-container", response);
 }
-renderpost(mypost);
+onClickBySelector("#list", () => {
+  window.location.href = "/";
+});
+
+onClickBySelector("#profile", () => {
+  localStorage.setItem("dataUserName", user.name);
+  window.location.href = "/profile/";
+});
+
+onClickBySelector("#logout-button", onLogout);
+
+renderpost(postsByUser);

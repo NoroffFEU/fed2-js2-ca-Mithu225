@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_SOCIAL_POSTS } from "../constants";
+import { API_SOCIAL_POSTS, API_SOCIAL_PROFILES } from "../constants";
 import { getHeaders } from "../headers";
 
 export async function readPost(id) {
@@ -10,16 +10,22 @@ export async function readPost(id) {
 }
 
 export async function readPosts(limit = 12, page = 1, tag) {
-  const result = await axios.get(`${API_SOCIAL_POSTS}?_author=true`, {
-    headers: getHeaders(),
-  });
+  const result = await axios.get(
+    `${API_SOCIAL_POSTS}?_author=true&limit=${limit}&page=${page}`,
+    {
+      headers: getHeaders(),
+    }
+  );
   return result.data;
 }
 
 export async function readPostsByUser(username, limit = 12, page = 1, tag) {
-  const result = await axios.get(`${API_SOCIAL_POSTS}/${id}`, {
-    header: getHeaders(),
-  });
+  const result = await axios.get(
+    `${API_SOCIAL_PROFILES}/${username}/posts?_author=true&limit=${limit}&page=${page}`,
+    {
+      headers: getHeaders(),
+    }
+  );
   return result.data;
 }
 

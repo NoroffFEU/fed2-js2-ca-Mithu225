@@ -3,7 +3,8 @@
   padding: 0;
   box-sizing: border-box;
 }
-.profile-details {
+.profile-details,
+.profile-body {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,11 +31,6 @@
   font-weight: bold;
 }
 
-ion-icon {
-  font-size: 24px;
-  cursor: pointer;
-}
-
 .follow-details {
   display: flex;
   gap: 2rem;
@@ -42,7 +38,8 @@ ion-icon {
   justify-content: center;
 }
 .friends,
-.followings {
+.followings,
+.post-total {
   background: linear-gradient(135deg, #d28509, #9747ff);
   color: white;
   width: 10rem;
@@ -61,6 +58,3 @@ ion-icon {
   border-radius: 50%;
   margin-right: 10px;
 }
-
-
-
