@@ -318,4 +318,12 @@ hr {
   text-align: center;
   padding-bottom: 1rem;
 }
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}
 /* style single page*/
