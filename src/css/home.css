@@ -1,3 +1,5 @@
+@import url("./style.css");
+
 * {
   margin: 0;
   padding: 0;
@@ -90,6 +92,3 @@
 .dropdown.show .dropdown-content {
   display: block;
 }
-
-
-

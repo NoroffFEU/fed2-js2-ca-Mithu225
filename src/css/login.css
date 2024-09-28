@@ -1,3 +1,5 @@
+@import url("./style.css");
+
 html {
   scroll-behavior: smooth;
 }
@@ -6,8 +8,6 @@ body {
   margin: 0;
   font-family: "Lato", sans-serif;
 }
-
-
 
 .login-form form {
   display: flex;

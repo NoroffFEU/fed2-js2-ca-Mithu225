@@ -1,3 +1,5 @@
+@import url("./style.css");
+
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+MX:wght@100..400&family=Playwrite+US+Trad:wght@100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 html {
@@ -8,8 +10,6 @@ body {
   margin: 0;
   font-family: "Lato", sans-serif;
 }
-
-
 
 .register-form form {
   display: flex;
@@ -79,4 +79,3 @@ hr {
   text-decoration-color: #8c5fff;
   text-decoration-thickness: 3px;
 }
-
