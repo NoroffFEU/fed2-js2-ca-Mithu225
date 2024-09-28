@@ -9,57 +9,63 @@ import {
   formatDateTime,
 } from "../../utilities/utils";
 
-authGuard();
 const user = getLoggedUser();
 
-onRenderBySelector(
-  "#avatar-home",
-  `<img class="avatar-img" src="${user.avatar.url}" />
+if (!user) {
+  authGuard();
+} else {
+  init();
+}
+
+function init() {
+  onRenderBySelector(
+    "#avatar-home",
+    `<img class="avatar-img" src="${user.avatar.url}" />
             <p class="username">${user.name}</p>`
-);
+  );
 
-onClickBySelector("#statusInput", () => {
-  window.location.href = "/post/create/";
-});
+  onClickBySelector("#statusInput", () => {
+    window.location.href = "/post/create/";
+  });
 
-onClickBySelector("#selected-all-post", () => {
-  onRenderBySelector("#selected-post", `All post`);
-  renderpost();
-});
+  onClickBySelector("#selected-all-post", () => {
+    onRenderBySelector("#selected-post", `All post`);
+    renderpost();
+  });
 
-onClickBySelector("#selected-my-post", () => {
-  onRenderBySelector("#selected-post", `My post`);
-  renderpost("byUser");
-});
+  onClickBySelector("#selected-my-post", () => {
+    onRenderBySelector("#selected-post", `My post`);
+    renderpost("byUser");
+  });
 
-onClickBySelector("#list", () => {
-  window.location.href = "/";
-});
+  onClickBySelector("#list", () => {
+    window.location.href = "/";
+  });
 
-onClickBySelector("#profile", () => {
-  localStorage.setItem("dataUserName", user.name);
-  window.location.href = "/profile/";
-});
-onClickBySelector("#logout-button", onLogout);
+  onClickBySelector("#profile", () => {
+    localStorage.setItem("dataUserName", user.name);
+    window.location.href = "/profile/";
+  });
+  onClickBySelector("#logout-button", onLogout);
 
-async function renderpost(type) {
-  let posts = [];
-  if (type === "byUser") {
-    const result = await readPostsByUser(user.name);
-    posts = result.data;
-  } else {
-    const result = await readPosts();
-    posts = result.data;
-  }
+  async function renderpost(type) {
+    let posts = [];
+    if (type === "byUser") {
+      const result = await readPostsByUser(user.name);
+      posts = result.data;
+    } else {
+      const result = await readPosts();
+      posts = result.data;
+    }
 
-  const response = posts.map((item) => {
-    return `
+    const response = posts.map((item) => {
+      return `
           <div class="post-card">
             <div class="post-info">
               <div class="user-info" id="post">
                 <img class="avatar" src="${item.author.avatar.url}" alt="${
-      item.author.avatar.alt
-    }" />
+        item.author.avatar.alt
+      }" />
               </div>
               <div class="user-details">
                 <div class="user">
@@ -136,43 +142,44 @@ async function renderpost(type) {
 
 
 `;
-  });
-  onRenderBySelector("#post-container", response);
-
-  document.querySelectorAll("#username").forEach((userElm) => {
-    userElm.addEventListener("click", () => {
-      const dataUserName = userElm.getAttribute("data-username");
-      localStorage.setItem("dataUserName", dataUserName);
-
-      window.location.href = "/profile/";
     });
-  });
+    onRenderBySelector("#post-container", response);
 
-  document.querySelectorAll("#edit-button").forEach((button) => {
-    button.addEventListener("click", () => {
-      const buttonDataId = button.getAttribute("data-id");
-      localStorage.setItem("post-id", buttonDataId);
+    document.querySelectorAll("#username").forEach((userElm) => {
+      userElm.addEventListener("click", () => {
+        const dataUserName = userElm.getAttribute("data-username");
+        localStorage.setItem("dataUserName", dataUserName);
 
-      window.location.href = "/post/edit/";
+        window.location.href = "/profile/";
+      });
     });
-  });
 
-  document.querySelectorAll("#delete-button").forEach((button) => {
-    button.addEventListener("click", async () => {
-      const buttonDeleteId = button.getAttribute("data-id");
-      await onDeletePost(buttonDeleteId);
-      renderpost(posts.filter((item) => item.id != buttonDeleteId));
-    });
-  });
+    document.querySelectorAll("#edit-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        const buttonDataId = button.getAttribute("data-id");
+        localStorage.setItem("post-id", buttonDataId);
 
-  document.querySelectorAll("#see-more").forEach((button) => {
-    button.addEventListener("click", () => {
-      const buttonSeemoreID = button.getAttribute("data-id");
-      localStorage.setItem("single-post-id", buttonSeemoreID);
-      window.location.href = "/post/";
+        window.location.href = "/post/edit/";
+      });
     });
-  });
-  onClickBySelector("#logout-button", onLogout);
+
+    document.querySelectorAll("#delete-button").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const buttonDeleteId = button.getAttribute("data-id");
+        await onDeletePost(buttonDeleteId);
+        renderpost(posts.filter((item) => item.id != buttonDeleteId));
+      });
+    });
+
+    document.querySelectorAll("#see-more").forEach((button) => {
+      button.addEventListener("click", () => {
+        const buttonSeemoreID = button.getAttribute("data-id");
+        localStorage.setItem("single-post-id", buttonSeemoreID);
+        window.location.href = "/post/";
+      });
+    });
+    onClickBySelector("#logout-button", onLogout);
+  }
+
+  renderpost();
 }
-
-renderpost();

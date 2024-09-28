@@ -18,7 +18,8 @@ export function onRenderBySelector(selector, content) {
 
 export function getLoggedUser() {
   const userFromLocal = localStorage.getItem("user");
-  const user = userFromLocal != null ? JSON.parse(userFromLocal) : {};
+  const user =
+    userFromLocal != null ? JSON.parse(userFromLocal) : userFromLocal;
   return user;
 }
 
