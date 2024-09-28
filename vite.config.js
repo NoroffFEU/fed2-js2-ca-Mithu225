@@ -3,7 +3,7 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   appType: "mpa",
-  base: "",
+  base: "/fed2-js2-ca-Mithu225/",
   server: {
     port: 5500,
   },
