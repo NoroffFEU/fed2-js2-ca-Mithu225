@@ -2,6 +2,7 @@ import { readPost } from "../../api/post/read";
 import { onLogout } from "../../ui/auth/logout";
 import { onUpdatePost } from "../../ui/post/update";
 import { authGuard } from "../../utilities/authGuard";
+import { onClickBySelector } from "../../utilities/utils";
 
 authGuard();
 
@@ -15,12 +16,10 @@ form.elements["tags"].value = result.data.tags;
 form.elements["image-url"].value = result.data.media.url;
 form.elements["image-alt"].value = result.data.media.alt;
 
-document
-  .querySelector("#cancel-post-submit-button")
-  .addEventListener("click", () => {
-    localStorage.removeItem("post-id");
-    window.location.href = "/";
-  });
+onClickBySelector("#cancel-post-submit-button", () => {
+  localStorage.removeItem("post-id");
+  window.location.href = "/";
+});
 
 form.addEventListener("submit", onUpdatePost);
 onClickBySelector("#list", () => {
@@ -30,4 +29,5 @@ onClickBySelector("#list", () => {
 onClickBySelector("#profile", () => {
   window.location.href = "/profile/";
 });
+
 onClickBySelector("#logout-button", onLogout);
