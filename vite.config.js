@@ -4,6 +4,9 @@ import { defineConfig } from "vite";
 export default defineConfig({
   appType: "mpa",
   base: "",
+  server: {
+    port: 5500,
+  },
   build: {
     target: "esnext",
     rollupOptions: {

@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,8 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Noroff FED2 JS2 CA</title>
     <script type="module" src="/src/app.js"></script>
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </head>
   <body>
-    <h1>Post Page</h1>
+    <header class="header">
+      <div class="header-left">
+        <a href="/">
+          <img class="logo" src="/asset/snappo.png" alt="Snappo logo" />
+        </a>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search...." class="search-input" />
+        <button class="search-btn">
+          <ion-icon class="search-icon" name="search-outline"></ion-icon>
+        </button>
+      </div>
+      <div class="header-right">
+        <div class="icon-container">
+          <button id="list" class="icon">
+            <ion-icon
+              class="single-icon"
+              size="large"
+              name="newspaper-outline"
+            ></ion-icon>
+          </button>
+          <button id="profile" class="icon">
+            <ion-icon
+              class="single-icon"
+              size="large"
+              name="person-circle-outline"
+            ></ion-icon>
+          </button>
+          <button id="logout-button" class="icon">
+            <ion-icon
+              class="single-icon"
+              size="large"
+              name="log-out-outline"
+            ></ion-icon>
+          </button>
+        </div>
+      </div>
+    </header>
+    <div>
+      <div class="container-title">
+        <h1>Single Post Page</h1>
+      </div>
+      <div
+        class="message-box success"
+        id="message-box"
+        style="display: none"
+      ></div>
+      <div class="post-container" id="post-container"></div>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2024 Snappo. All rights reserved.</p>
+    </footer>
   </body>
 </html>

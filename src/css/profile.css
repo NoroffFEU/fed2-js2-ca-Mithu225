@@ -1,0 +1,62 @@
+@import url("./style.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.profile-details,
+.profile-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar-profile {
+  margin-bottom: 10px;
+}
+
+.avatar-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.edit-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.username {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.follow-details {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem;
+  justify-content: center;
+}
+.friends,
+.followings,
+.post-total {
+  background: linear-gradient(135deg, #d28509, #9747ff);
+  color: white;
+  width: 10rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-align: center;
+  padding: 1rem;
+}
+.avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 10px;
+}

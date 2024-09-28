@@ -1,22 +1,99 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <title>Noroff FED2 JS2 CA</title>
+    <script type="module" src="/src/app.js"></script>
+    <link rel="stylesheet" href="/src/css/home.css" />
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="stylesheet" href="/src/css/profile.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Noroff FED2 JS2 CA</title>
-  <script type="module" src="/src/app.js"></script>
-</head>
+  <body>
+    <div class="wrapper">
+      <main class="content">
+        <header class="header">
+          <div class="header-left">
+            <a href="/">
+              <img class="logo" src="/asset/snappo.png" alt="Snappo logo"
+            /></a>
+          </div>
+          <div class="search-bar">
+            <input type="text" placeholder="Search...." class="search-input" />
+            <button class="search-btn">
+              <ion-icon class="search-icon" name="search-outline"></ion-icon>
+            </button>
+          </div>
+          <div class="header-right">
+            <div class="icon-container">
+              <button id="list" class="icon">
+                <ion-icon
+                  class="single-icon"
+                  size="large"
+                  name="newspaper-outline"
+                ></ion-icon>
+              </button>
+              <button id="profile" class="icon">
+                <ion-icon
+                  class="single-icon"
+                  size="large"
+                  name="person-circle-outline"
+                ></ion-icon>
+              </button>
+              <button id="logout-button" class="icon">
+                <ion-icon
+                  class="single-icon"
+                  size="large"
+                  name="log-out-outline"
+                ></ion-icon>
+              </button>
+            </div>
+          </div>
+        </header>
+        <div class="body-top">
+          <div class="avatar" id="avatar-home"></div>
 
-<body>
-  <img src="/images/noroff-logo.png" alt="Noroff Logo" />
+          <div class="dropdown">
+            <button class="dropdown-button" id="selected-post">All post</button>
+            <ion-icon
+              class="dropdown-icon"
+              name="caret-down-outline"
+            ></ion-icon>
+            <div class="dropdown-content">
+              <button id="selected-all-post">All post</button>
+              <button id="selected-my-post">My post</button>
+            </div>
+          </div>
+        </div>
+        <div id="message-box" style="display: none; color: green"></div>
+        <div class="body-container">
+          <input
+            type="text"
+            placeholder="What are you thinking about?"
+            class="status-input"
+            id="statusInput"
+          />
+        </div>
 
-  <h1>Home</h1>
-
-  <a href="/profile/">My Profile</a>
-  <a href="/auth/login/">Login</a>
-  <a href="/auth/register/">Register</a>
-  <button>Logout</button>
-</body>
+        <div class="post-container" id="post-container">loading.....</div>
+      </main>
+    </div>
+    <footer class="footer">
+      <p>&copy; 2024 Snappo. All rights reserved.</p>
+    </footer>
+  </body>
 </html>
