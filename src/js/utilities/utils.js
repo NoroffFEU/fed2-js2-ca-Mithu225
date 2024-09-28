@@ -16,6 +16,15 @@ export function onRenderBySelector(selector, content) {
   }
 }
 
+export function onClickBySelectors(selector, callback) {
+  const elements = document.querySelectorAll(selector);
+  if (elements.length) {
+    elements.forEach((element) => {
+      element.addEventListener("click", (event) => callback(element, event));
+    });
+  }
+}
+
 export function getLoggedUser() {
   const userFromLocal = localStorage.getItem("user");
   const user =

@@ -1,7 +1,8 @@
 import { readPosts, readPostsByUser } from "../../api/post/read";
 import { onLogout } from "../../ui/auth/logout";
-import { onDeletePost } from "../../ui/post/delete";
 import { authGuard } from "../../utilities/authGuard";
+import { handleHeaderButtons } from "../../utilities/header";
+import { handlePostButtons } from "../../utilities/posts";
 import {
   onRenderBySelector,
   onClickBySelector,
@@ -38,15 +39,7 @@ function init() {
     renderpost("byUser");
   });
 
-  onClickBySelector("#list", () => {
-    window.location.href = "/";
-  });
-
-  onClickBySelector("#profile", () => {
-    localStorage.setItem("dataUserName", user.name);
-    window.location.href = "/profile/";
-  });
-  onClickBySelector("#logout-button", onLogout);
+  handleHeaderButtons();
 
   async function renderpost(type) {
     let posts = [];
@@ -143,41 +136,11 @@ function init() {
 
 `;
     });
+
     onRenderBySelector("#post-container", response);
 
-    document.querySelectorAll("#username").forEach((userElm) => {
-      userElm.addEventListener("click", () => {
-        const dataUserName = userElm.getAttribute("data-username");
-        localStorage.setItem("dataUserName", dataUserName);
+    handlePostButtons(renderpost, posts);
 
-        window.location.href = "/profile/";
-      });
-    });
-
-    document.querySelectorAll("#edit-button").forEach((button) => {
-      button.addEventListener("click", () => {
-        const buttonDataId = button.getAttribute("data-id");
-        localStorage.setItem("post-id", buttonDataId);
-
-        window.location.href = "/post/edit/";
-      });
-    });
-
-    document.querySelectorAll("#delete-button").forEach((button) => {
-      button.addEventListener("click", async () => {
-        const buttonDeleteId = button.getAttribute("data-id");
-        await onDeletePost(buttonDeleteId);
-        renderpost(posts.filter((item) => item.id != buttonDeleteId));
-      });
-    });
-
-    document.querySelectorAll("#see-more").forEach((button) => {
-      button.addEventListener("click", () => {
-        const buttonSeemoreID = button.getAttribute("data-id");
-        localStorage.setItem("single-post-id", buttonSeemoreID);
-        window.location.href = "/post/";
-      });
-    });
     onClickBySelector("#logout-button", onLogout);
   }
 

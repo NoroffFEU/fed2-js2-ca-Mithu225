@@ -1,11 +1,7 @@
 import { singlePost } from "../../api/post/read";
-import { onLogout } from "../../ui/auth/logout";
-import { onDeletePost } from "../../ui/post/delete";
-import {
-  formatDateTime,
-  getLoggedUser,
-  onClickBySelector,
-} from "../../utilities/utils";
+import { handleHeaderButtons } from "../../utilities/header";
+import { handlePostButtons } from "../../utilities/posts";
+import { formatDateTime, getLoggedUser } from "../../utilities/utils";
 
 async function displaySinglePost() {
   try {
@@ -27,7 +23,11 @@ async function displaySinglePost() {
               </div>
               <div class="user-details">
                 <div class="user">
-                  <p class="username">${item.author.name}</p>
+                  <p class="username" id="username" data-username="${
+                    item.author.name
+                  }">
+                  ${item.author.name}
+                </p>
                   <p class="time">${formatDateTime(item.created)}</p>
                 </div>
        
@@ -59,7 +59,7 @@ async function displaySinglePost() {
             </p>
                <div class="post-list">
             <div class="post-item" id="post-1">
-              </div></div>
+            </div>
             <div class="interaction-bar">
             ${
               item.media && item.media.url
@@ -96,30 +96,9 @@ async function displaySinglePost() {
     console.error("Failed to fetch the post:", error);
   }
 
-  document.querySelectorAll("#edit-button").forEach((button) => {
-    button.addEventListener("click", () => {
-      const buttonDataId = button.getAttribute("data-id");
-      localStorage.setItem("post-id", buttonDataId);
+  handlePostButtons();
 
-      window.location.href = "/post/edit/";
-    });
-  });
-
-  document.querySelectorAll("#delete-button").forEach((button) => {
-    button.addEventListener("click", async () => {
-      const buttonDeleteId = button.getAttribute("data-id");
-      await onDeletePost(buttonDeleteId);
-      renderpost(posts.filter((result) => result.id != buttonDeleteId));
-    });
-  });
-  onClickBySelector("#list", () => {
-    window.location.href = "/";
-  });
-
-  onClickBySelector("#profile", () => {
-    window.location.href = "/profile/";
-  });
-  onClickBySelector("#logout-button", onLogout);
+  handleHeaderButtons();
 }
 
 displaySinglePost();

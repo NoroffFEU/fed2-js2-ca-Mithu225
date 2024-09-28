@@ -1,6 +1,6 @@
-import { onLogout } from "../../ui/auth/logout";
 import { onCreatePost } from "../../ui/post/create";
 import { authGuard } from "../../utilities/authGuard";
+import { handleHeaderButtons } from "../../utilities/header";
 import { onClickBySelector } from "../../utilities/utils";
 
 authGuard();
@@ -11,11 +11,5 @@ form.addEventListener("submit", onCreatePost);
 onClickBySelector("#cancel-post-submit-button", () => {
   window.location.href = "/";
 });
-onClickBySelector("#list", () => {
-  window.location.href = "/";
-});
 
-onClickBySelector("#profile", () => {
-  window.location.href = "/profile/";
-});
-onClickBySelector("#logout-button", onLogout);
+handleHeaderButtons();

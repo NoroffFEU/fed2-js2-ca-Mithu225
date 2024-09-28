@@ -1,11 +1,11 @@
 import { readPostsByUser } from "../../api/post/read";
 import { readProfile } from "../../api/profile/read";
-import { onLogout } from "../../ui/auth/logout";
 import { authGuard } from "../../utilities/authGuard";
+import { handleHeaderButtons } from "../../utilities/header";
+import { handlePostButtons } from "../../utilities/posts";
 import {
   formatDateTime,
   getLoggedUser,
-  onClickBySelector,
   onRenderBySelector,
 } from "../../utilities/utils";
 
@@ -134,16 +134,10 @@ function renderpost(posts) {
 `;
   });
   onRenderBySelector("#post-container", response);
+
+  handlePostButtons(renderpost, posts);
 }
-onClickBySelector("#list", () => {
-  window.location.href = "/";
-});
 
-onClickBySelector("#profile", () => {
-  localStorage.setItem("dataUserName", user.name);
-  window.location.href = "/profile/";
-});
-
-onClickBySelector("#logout-button", onLogout);
+handleHeaderButtons();
 
 renderpost(postsByUser);
