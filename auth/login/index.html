@@ -10,14 +10,21 @@
   </head>
 
   <body>
-    <div class="wrapper">
+    <div class="flex flex-col min-h-screen">
       <main class="content">
-        <div class="form-top">
-          <img class="logo" src="/asset/snappo.png" alt="Snappo logo" />
+        <div class="text-left p-10">
+          <img
+            class="cursor-pointer"
+            src="/asset/snappo.png"
+            alt="Snappo logo"
+          />
 
-          <h1 class="slogan">Connect. Share. Inspire</h1>
+          <h1 class="text-[#a9a8a8] m-0 text-left">Connect. Share. Inspire</h1>
         </div>
-        <form class="form" name="login">
+        <form
+          class="flex flex-col text-lg mx-auto max-w-[40rem] pt-4"
+          name="login"
+        >
           <div class="login-form">
             <label class="gradient-text" for="email">Email</label>
             <input

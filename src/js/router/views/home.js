@@ -98,9 +98,10 @@ function init() {
             </p>
                <div class="post-list">
   <div class="post-item" id="post-1">
-    <button id=see-more type=button data-id="${
-      item.id
-    }">See more..</button></div></div>
+    <button id="see-more" 
+  class="border-none bg-white text-[#875acb] cursor-pointer" type=button data-id="${
+    item.id
+  }">See more..</button></div></div>
             <div class="interaction-bar">
             ${
               item.media && item.media.url
