@@ -21,12 +21,12 @@ const postsByUser = postsByUserResult.data;
 onRenderBySelector(
   "#profile-info",
   `<div class="avatar-profile">
-      <img class="avatar-img" src="${profile.avatar.url}" />
+      <img class="w-24 h-16 rounded-full" src="${profile.avatar.url}" />
       <div>
       <div class="edit-profile">
-            <p class="username">${profile.name}</p>
+            <p class="text-purple-700 text-lg font-bold cursor-pointer py-1">${profile.name}</p>
              <a href="#">
-          <ion-icon class="edit-icon" name="create-outline"></ion-icon
+          <ion-icon class="text-purple-600" name="create-outline"></ion-icon
         ></a>
       </div>
       </div>
@@ -54,30 +54,34 @@ onRenderBySelector(
 function renderpost(posts) {
   const response = posts.map((item) => {
     return `
-          <div class="post-card">
+          <div class="w-1/2 p-5 border-4 rounded-md relative overflow-hidden" style="border-color: transparent; background-image: linear-gradient(white, white), linear-gradient(135deg, #9747ff, #07d8ba); background-origin: border-box; background-clip: padding-box, border-box;">
             <div class="post-info">
               <div class="user-info" id="post">
-                <img class="avatar" src="${item.author.avatar.url}" alt="${
-      item.author.avatar.alt
-    }" />
+                <img class="flex items-center rounded-full w-20 h-16" src="${
+                  item.author.avatar.url
+                }" alt="${item.author.avatar.alt}" />
               </div>
-              <div class="user-details">
+              <div class="flex justify-between w-full">
                 <div class="user">
-                  <p class="username">${item.author.name}</p>
-                  <p class="time">${formatDateTime(item.created)}</p>
+                  <p class="text-purple-700 text-lg font-bold cursor-pointer py-1">${
+                    item.author.name
+                  }</p>
+                  <p class="text-gray-500 text-sm">${formatDateTime(
+                    item.created
+                  )}</p>
                 </div>
        
   
-                <div class="edit-post" >
+                <div class="ml-auto flex gap-2" >
                 ${
                   user.name === item.author.name
                     ? `
                   <button id="edit-button" type="button" data-id="${item.id}">
-                    <ion-icon class="edit-icon" name="create-outline">
+                    <ion-icon class="text-purple-600" name="create-outline">
                     </ion-icon>
                   </button>
                   <button id="delete-button" type="button" data-id="${item.id}">
-                    <ion-icon class="delete-icon" name="trash-outline"></ion-icon></button>
+                    <ion-icon class="text-purple-600" name="trash-outline"></ion-icon></button>
                   
                   `
                     : ""
@@ -87,10 +91,10 @@ function renderpost(posts) {
              
             </div>
 
-            <p class="post-content">
+            <p class="my-4 text-base leading-6 break-words">
               ${item.title}
             </p>
-             <p class="post-content">
+             <p class="my-4 text-base leading-6 break-words">
               ${item.body}
             </p>
                <div class="post-list">
@@ -99,7 +103,7 @@ function renderpost(posts) {
   class="border-none bg-white text-[#875acb] cursor-pointer" type=button data-id="${
     item.id
   }">See more..</button></div></div>
-            <div class="interaction-bar">
+            <div class="flex flex-col items-start">
             ${
               item.media && item.media.url
                 ? `<div class="upload-content">
@@ -108,7 +112,7 @@ function renderpost(posts) {
                 : ""
             }
             
-              <div class="likes">
+              <div class="flex items-center text-purple-600 mb-2.5 text-xl">
                 <ion-icon class="heart" name="heart-outline"></ion-icon>
                 <p>3</p>
               </div>

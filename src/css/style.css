@@ -68,7 +68,7 @@ body {
   gap: 10px;
 } */
 
-  /* .icon {
+/* .icon {
     width: 2.5rem;
     height: 2.5rem;
     background: linear-gradient(90deg, #a060f0, #5cc9f5);
@@ -181,37 +181,42 @@ footer p {
 
 /* post card*/
 
-.avatar {
+/* .avatar {
   display: flex;
   align-items: center;
-}
-.dropdown-icon {
+  border-radius: 50%;
+  margin-right: 10px;
+} */
+
+/* .dropdown-icon {
   padding: 2px;
-}
-.avatar img {
+} */
+/* .avatar img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   margin-right: 10px;
-}
+} */
 
-.username {
+/* .username {
   font-size: large;
   color: purple;
   cursor: pointer;
-}
-.post-container {
+  font-weight: bold;
+  font-size: 1.1em;
+} */
+/* .post-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   padding: 2rem 0;
   flex-direction: column;
-}
-.post-info {
+} */
+/* .post-info {
   display: flex;
-}
-.post-card {
+} */
+/* .post-card {
   width: 50%;
   padding: 20px;
   border: 2px solid;
@@ -222,66 +227,58 @@ footer p {
     linear-gradient(135deg, #9747ff, #07d8ba);
   background-origin: border-box;
   background-clip: padding-box, border-box;
-}
+} */
 
-.user-info {
+/* .user-info {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-.edit-icon,
+} */
+/* .edit-icon,
 .delete-icon {
   color: #9747ff;
-}
-.edit-post {
+} */
+/* .edit-post {
   margin-left: auto;
   display: flex;
   gap: 10px;
-}
-.avatar {
-  border-radius: 50%;
-  margin-right: 10px;
-}
+} */
 
-.user-details {
+/* .user-details {
   display: flex;
   justify-content: space-between;
   width: 100%;
-}
-.username {
-  font-weight: bold;
-  font-size: 1.1em;
-}
+} */
 
-.time {
+/* .time {
   font-size: 0.9em;
   color: gray;
-}
+} */
 
-.post-content {
+/* .post-content {
   margin: 15px 0;
   font-size: 1em;
   line-height: 1.5;
   word-break: break-word;
-}
+} */
 
-.interaction-bar {
+/* .interaction-bar {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
+} */
 
-.likes {
+/* .likes {
   display: flex;
   align-items: center;
   font-size: 1.2em;
   color: purple;
   margin-bottom: 10px;
-}
+} */
 
-.likes .heart {
+/* .likes, .heart {
   margin-right: 5px;
-}
+} */
 
 hr {
   width: 100%;
@@ -308,10 +305,7 @@ hr {
   margin-right: 5px;
   margin-left: 5px;
 }
-.avatar {
-  width: 70px;
-  height: 70px;
-}
+
 .upload-img {
   width: 100%;
   padding: 1rem 0;
