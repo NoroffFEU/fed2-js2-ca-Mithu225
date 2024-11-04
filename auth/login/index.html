@@ -11,7 +11,7 @@
 
   <body>
     <div class="flex flex-col min-h-screen">
-      <main class="content">
+      <main class="flex-1">
         <div class="text-left p-10">
           <img
             class="cursor-pointer"
@@ -44,7 +44,7 @@
               required
             />
           </div>
-          <div id="errors" class="error"></div>
+          <div id="errors" class="error text-red-500"></div>
           <div class="login-click">
             <button id="login-submit-button" type="submit" class="login-button">
               LOGIN
@@ -55,7 +55,10 @@
       </main>
     </div>
 
-    <footer class="footer">
+    <footer
+      class="mt-12 w-full text-center py-5 text-white"
+      style="background: linear-gradient(135deg, #9747ff, #07d8ba)"
+    >
       <p>&copy; 2024 Snappo. All rights reserved.</p>
     </footer>
   </body>

@@ -21,12 +21,12 @@ const postsByUser = postsByUserResult.data;
 onRenderBySelector(
   "#profile-info",
   `<div class="avatar-profile">
-      <img class="w-24 h-16 rounded-full" src="${profile.avatar.url}" />
+      <img class="w-24 h-24 rounded-full" src="${profile.avatar.url}" />
       <div>
       <div class="edit-profile">
             <p class="text-purple-700 text-lg font-bold cursor-pointer py-1">${profile.name}</p>
              <a href="#">
-          <ion-icon class="text-purple-600" name="create-outline"></ion-icon
+          <ion-icon class="text-purple-600 edit-icon text-xl cursor-pointer" name="create-outline"></ion-icon
         ></a>
       </div>
       </div>
@@ -55,9 +55,9 @@ function renderpost(posts) {
   const response = posts.map((item) => {
     return `
           <div class="w-1/2 p-5 border-4 rounded-md relative overflow-hidden" style="border-color: transparent; background-image: linear-gradient(white, white), linear-gradient(135deg, #9747ff, #07d8ba); background-origin: border-box; background-clip: padding-box, border-box;">
-            <div class="post-info">
-              <div class="user-info" id="post">
-                <img class="flex items-center rounded-full w-20 h-16" src="${
+            <div class="flex gap-4">
+              <div class="flex " items-center justify-between" id="post">
+                <img class="flex items-center rounded-full w-20 h-16 gap-1" src="${
                   item.author.avatar.url
                 }" alt="${item.author.avatar.alt}" />
               </div>
@@ -76,11 +76,11 @@ function renderpost(posts) {
                 ${
                   user.name === item.author.name
                     ? `
-                  <button id="edit-button" type="button" data-id="${item.id}">
+                  <button id="edit-button" class="border-0 bg-white" type="button" data-id="${item.id}">
                     <ion-icon class="text-purple-600" name="create-outline">
                     </ion-icon>
                   </button>
-                  <button id="delete-button" type="button" data-id="${item.id}">
+                  <button id="delete-button" class="border-0 bg-white" type="button" data-id="${item.id}">
                     <ion-icon class="text-purple-600" name="trash-outline"></ion-icon></button>
                   
                   `
@@ -107,7 +107,7 @@ function renderpost(posts) {
             ${
               item.media && item.media.url
                 ? `<div class="upload-content">
-                <img class="upload-img" src="${item.media.url}" />
+                <img class="w-full py-4" src="${item.media.url}" />
               </div>`
                 : ""
             }
@@ -117,19 +117,19 @@ function renderpost(posts) {
                 <p>3</p>
               </div>
                
-              <hr />
-              <div class="actions">
-                <div class="action">
+              <hr class="w-full border-b border-gray-300 my-2.5"/>
+              <div class="flex justify-around w-full">
+                <div class="flex items-center text-purple-600 text-base cursor-pointer">
                   <ion-icon name="thumbs-up-outline"></ion-icon>
-                  <p>Like</p>
+                  <p class="mx-2">Like</p>
                 </div>
-                <div class="action">
+                <div class="flex items-center text-purple-600 text-base cursor-pointer">
                   <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-                  <p>Comment</p>
+                  <p class="mx-2">Comment</p>
                 </div>
-                <div class="action">
+                <div class="flex items-center text-purple-600 text-base cursor-pointer">
                   <ion-icon name="share-social-outline"></ion-icon>
-                  <p>Share</p>
+                  <p class="mx-2">Share</p>
                 </div>
               </div>
             </div>

@@ -19,9 +19,9 @@ body {
   min-height: 100vh;
 } */
 
-.content {
+/* .content {
   flex: 1;
-}
+} */
 /* .header {
   display: flex;
   justify-content: space-between;
@@ -90,17 +90,17 @@ body {
   color: #875acb;
   cursor: pointer;
 } */
-#edit-button,
+/* #edit-button,
 #delete-button {
   border: none;
   background-color: white;
-}
+} */
 
-.delete-icon,
+/* .delete-icon,
 .edit-icon {
   font-size: 24px;
   cursor: pointer;
-}
+} */
 
 footer {
   margin-top: 3rem;
@@ -279,48 +279,48 @@ footer p {
 /* .likes, .heart {
   margin-right: 5px;
 } */
-
+/* 
 hr {
   width: 100%;
   border: none;
   border-bottom: 1px solid #e0e0e0;
   margin: 10px 0;
-}
+} */
 
-.actions {
+/* .actions {
   display: flex;
   justify-content: space-around;
   width: 100%;
-}
+} */
 
-.action {
+/* .action {
   display: flex;
   align-items: center;
   font-size: 1em;
   color: purple;
   cursor: pointer;
-}
+} */
 
-.action p {
+/* .action p {
   margin-right: 5px;
   margin-left: 5px;
-}
+} */
 
-.upload-img {
+/* .upload-img {
   width: 100%;
   padding: 1rem 0;
-}
+} */
 
-#message-box {
+/* #message-box {
   text-align: center;
   padding-bottom: 1rem;
-}
+} */
 
-.success {
+/* .success {
   color: green;
-}
+} */
 
-.error {
+/* .error {
   color: red;
-}
+} */
 /* style single page*/

@@ -77,12 +77,12 @@ function init() {
                 ${
                   user.name === item.author.name
                     ? `
-                  <button id="edit-button" type="button" data-id="${item.id}">
-                    <ion-icon class="text-purple-600" name="create-outline">
+                  <button id="edit-button" class="border-0 bg-white" type="button" data-id="${item.id}">
+                    <ion-icon class="text-purple-600 "delete-icon text-xl cursor-pointer"" name="create-outline">
                     </ion-icon>
                   </button>
-                  <button id="delete-button" type="button" data-id="${item.id}">
-                    <ion-icon class="text-purple-600" name="trash-outline"></ion-icon></button>
+                  <button id="delete-button" class="border-0 bg-white" type="button" data-id="${item.id}">
+                    <ion-icon class="text-purple-600 "delete-icon text-xl cursor-pointer"" name="trash-outline"></ion-icon></button>
                   
                   `
                     : ""
@@ -108,7 +108,7 @@ function init() {
             ${
               item.media && item.media.url
                 ? `<div class="upload-content">
-                <img class="upload-img" src="${item.media.url}" />
+                <img class="w-full py-4" src="${item.media.url}" />
               </div>`
                 : ""
             }
@@ -118,19 +118,19 @@ function init() {
                 <p>3</p>
               </div>
                
-              <hr />
-              <div class="actions">
-                <div class="action">
+              <hr class="w-full border-b border-gray-300 my-2.5"/>
+              <div class="flex justify-around w-full">
+                <div class="flex items-center text-purple-600 text-base cursor-pointer">
                   <ion-icon name="thumbs-up-outline"></ion-icon>
-                  <p>Like</p>
+                  <p class="mx-2">Like</p>
                 </div>
-                <div class="action">
+                <div class="flex items-center text-purple-600 text-base cursor-pointer">
                   <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-                  <p>Comment</p>
+                  <p class="mx-2">Comment</p>
                 </div>
-                <div class="action">
+                <div class="flex items-center text-purple-600 text-base cursor-pointer">
                   <ion-icon name="share-social-outline"></ion-icon>
-                  <p>Share</p>
+                  <p class="mx-2">Share</p>
                 </div>
               </div>
             </div>

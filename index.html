@@ -25,7 +25,7 @@
 
   <body>
     <div class="flex flex-col min-h-screen">
-      <main class="content">
+      <main class="flex-1">
         <header class="flex justify-between items-center bg-white p-2.5 px-5">
           <div class="header-left">
             <a href="/">
@@ -88,17 +88,17 @@
 
           <div class="dropdown">
             <button class="dropdown-button" id="selected-post">All post</button>
-            <ion-icon
-              class="p-1"
-              name="caret-down-outline"
-            ></ion-icon>
+            <ion-icon class="p-1" name="caret-down-outline"></ion-icon>
             <div class="dropdown-content">
               <button id="selected-all-post">All post</button>
               <button id="selected-my-post">My post</button>
             </div>
           </div>
         </div>
-        <div id="message-box" style="display: none; color: green"></div>
+        <div
+          id="message-box"
+          class="hidden text-center pb-4 text-green-500"
+        ></div>
         <div class="body-container">
           <input
             type="text"
@@ -108,10 +108,18 @@
           />
         </div>
 
-        <div class="flex flex-col items-center justify-center h-full py-8" id="post-container">loading.....</div>
+        <div
+          class="flex flex-col items-center justify-center h-full py-8"
+          id="post-container"
+        >
+          loading.....
+        </div>
       </main>
     </div>
-    <footer class="footer">
+    <footer
+      class="mt-12 w-full text-center py-5 text-white"
+      style="background: linear-gradient(135deg, #9747ff, #07d8ba)"
+    >
       <p>&copy; 2024 Snappo. All rights reserved.</p>
     </footer>
   </body>
