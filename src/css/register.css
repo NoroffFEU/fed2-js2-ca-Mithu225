@@ -11,25 +11,25 @@ body {
   font-family: "Lato", sans-serif;
 }
 
-.register-form form {
+/* .register-form form {
   display: flex;
   flex-direction: column;
   max-width: 40rem;
   text-align: center;
   padding: 2rem;
-}
+} */
 
-.register-form {
+/* .register-form {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   text-align: left;
-}
-.register-click {
+} */
+/* .register-click {
   text-align: center;
   padding: 2rem;
-}
+} */
 
 .register-form a:hover {
   text-decoration: underline;

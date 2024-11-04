@@ -25,8 +25,8 @@
           class="flex flex-col text-lg mx-auto max-w-[40rem] pt-4"
           name="register"
         >
-          <div class="register-form">
-            <label class="gradient-text" for="name">Name</label>
+          <div class="w-full flex flex-col gap-4 text-left">
+            <label class="text-purple-600" for="name">Name</label>
             <input
               id="name"
               type="text"
@@ -36,10 +36,16 @@
               pattern="^[\w]+$"
               title="Please enter a username using only letters and numbers"
               placeholder="Max 20 characters"
-              class="gradient-input"
+              class="mb-4 p-2 text-base border-2 border-transparent rounded-md"
+              style="
+                background-image: linear-gradient(white, white),
+                  linear-gradient(135deg, #e0b230, #07d8ba);
+                background-origin: border-box;
+                background-clip: padding-box, border-box;
+              "
             />
 
-            <label class="gradient-text" for="email">Email</label>
+            <label class="text-purple-600" for="email">Email</label>
             <input
               id="email"
               type="email"
@@ -48,10 +54,16 @@
               pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
               title="Please enter a valid noroff.no or stud.noroff.no address"
               placeholder="Email with @(stud.)noroff.no"
-              class="gradient-input"
+              class="mb-4 p-2 text-base border-2 border-transparent rounded-md"
+              style="
+                background-image: linear-gradient(white, white),
+                  linear-gradient(135deg, #e0b230, #07d8ba);
+                background-origin: border-box;
+                background-clip: padding-box, border-box;
+              "
             />
 
-            <label class="gradient-text" for="password">Password</label>
+            <label class="text-purple-600" for="password">Password</label>
             <input
               type="password"
               name="password"
@@ -59,11 +71,17 @@
               required
               minlength="8"
               placeholder="Min 08 characters"
-              class="gradient-input"
+              class="mb-4 p-2 text-base border-2 border-transparent rounded-md"
+              style="
+                background-image: linear-gradient(white, white),
+                  linear-gradient(135deg, #e0b230, #07d8ba);
+                background-origin: border-box;
+                background-clip: padding-box, border-box;
+              "
             />
           </div>
           <div id="errors" class="error text-red-500"></div>
-          <div class="register-click">
+          <div class="text-center p-8">
             <button
               id="register-submit-button"
               type="submit"
@@ -85,7 +103,9 @@
       class="mt-12 w-full text-center py-5 text-white"
       style="background: linear-gradient(135deg, #9747ff, #07d8ba)"
     >
-      <p>&copy; 2024 Snappo. All rights reserved.</p>
+      <p class="flex justify-center items-center text-base">
+        &copy; 2024 Snappo. All rights reserved.
+      </p>
     </footer>
   </body>
 </html>
