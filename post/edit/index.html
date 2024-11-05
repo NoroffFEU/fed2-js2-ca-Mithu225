@@ -77,14 +77,14 @@
     </header>
 
     <div class="container-text-center text-[#817575] text-2xl">
-      <h1>Edit Post</h1>
+      <h1 class="text-center text-[#817575] pt-4 text-3xl">Edit Post</h1>
     </div>
 
     <form
       class="flex flex-col text-lg mx-auto max-w-[40rem] pt-4"
       name="updatePost"
     >
-      <div class="edit-container">
+      <div class="flex flex-col gap-4">
         <label class="text-purple-600" for="post-title">Title:</label>
         <input
           class="mb-4 p-2 text-base border-2 border-transparent rounded-md"
@@ -160,18 +160,18 @@
       </div>
       <div id="message-box" class="text-center pb-4"></div>
       <div id="errors" style="color: red"></div>
-      <div class="button-edit-page">
+      <div class="flex gap-8 p-12 justify-center">
         <button
           id="edit-post-submit-button"
           type="submit"
-          class="button button-edit"
+          class="bg-gradient-to-r from-[#07c0d8] to-[#9747ff] text-white py-4 px-8 w-40 rounded-lg font-bold cursor-pointer transition-colors duration-300 ease-in-out"
         >
-          Update Post
+          Update
         </button>
         <button
           id="cancel-post-submit-button"
           type="button"
-          class="button button-cancel"
+          class="bg-gradient-to-r from-[#07c0d8] to-[#9747ff] text-white py-4 px-8 w-40 rounded-lg font-bold cursor-pointer transition-colors duration-300 ease-in-out"
         >
           Cancel
         </button>

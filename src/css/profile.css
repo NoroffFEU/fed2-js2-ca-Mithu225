@@ -12,9 +12,9 @@
   align-items: center;
 }
 
-.avatar-profile {
+/* .avatar-profile {
   margin-bottom: 10px;
-}
+} */
 
 /* .avatar-img {
   width: 100px;
@@ -22,24 +22,24 @@
   border-radius: 50%;
 } */
 
-.edit-profile {
+/* .edit-profile {
   display: flex;
   align-items: center;
   gap: 10px;
-}
+} */
 
-.username {
+/* .username {
   font-size: 20px;
   font-weight: bold;
-}
+} */
 
-.follow-details {
+/* .follow-details {
   display: flex;
   gap: 2rem;
   padding: 1rem;
   justify-content: center;
-}
-.friends,
+} */
+/* .friends,
 .followings,
 .post-total {
   background: linear-gradient(135deg, #d28509, #9747ff);
@@ -53,10 +53,10 @@
   transition: background 0.3s ease;
   text-align: center;
   padding: 1rem;
-}
-.avatar img {
+} */
+/* .avatar img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   margin-right: 10px;
-}
+} */

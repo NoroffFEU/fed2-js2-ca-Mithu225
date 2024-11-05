@@ -1,29 +1,29 @@
 @import url("./style.css");
 
-h1 {
+/* h1 {
   text-align: center;
   color: #817575;
-}
+} */
 
-.edit-container {
+/* .edit-container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-}
-.button-submit-page,
+} */
+/* .button-submit-page,
 .button-edit-page {
   display: flex;
   gap: 2rem;
   padding: 3rem;
   justify-content: center;
-}
+} */
 
 /* .container-title {
   color: var(--color-text-gray);
   padding: 1rem 5rem;
 } */
 
-.button-submit,
+/* .button-submit,
 .button-edit,
 .button-cancel {
   background: linear-gradient(135deg, #07c0d8, #9747ff);
@@ -36,4 +36,4 @@ h1 {
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s ease;
-}
+} */

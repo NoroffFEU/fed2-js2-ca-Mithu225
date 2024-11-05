@@ -23,7 +23,7 @@ onRenderBySelector(
   `<div class="avatar-profile">
       <img class="w-24 h-24 rounded-full" src="${profile.avatar.url}" />
       <div>
-      <div class="edit-profile">
+      <div class="flex items-center gap-2.5">
             <p class="text-purple-700 text-lg font-bold cursor-pointer py-1">${profile.name}</p>
              <a href="#">
           <ion-icon class="text-purple-600 edit-icon text-xl cursor-pointer" name="create-outline"></ion-icon
@@ -36,16 +36,16 @@ onRenderBySelector(
 );
 onRenderBySelector(
   "#follow-details",
-  `<div class="friends">
+  `<div class="bg-gradient-to-tr from-[#d28509] to-[#9747ff] text-white w-40 border-none rounded-lg text-lg font-bold cursor-pointer transition-all duration-300 ease-in-out text-center p-4 hover:bg-gradient-to-tr hover:from-[#ff7e5f] hover:to-[#ff33cc]">
           <p>Follower</p>
           <p>${profile._count.followers}</p>
         </div>
-        <div class="followings">
+        <div class="bg-gradient-to-tr from-[#d28509] to-[#9747ff] text-white w-40 border-none rounded-lg text-lg font-bold cursor-pointer transition-all duration-300 ease-in-out text-center p-4 hover:bg-gradient-to-tr hover:from-[#ff7e5f] hover:to-[#ff33cc]">
           <p>Followings</p>
           <p>${profile._count.following}</p>
 
         </div>
-        <div class="post-total">
+        <div class="bg-gradient-to-tr from-[#d28509] to-[#9747ff] text-white w-40 border-none rounded-lg text-lg font-bold cursor-pointer transition-all duration-300 ease-in-out text-center p-4 hover:bg-gradient-to-tr hover:from-[#ff7e5f] hover:to-[#ff33cc]">
           <p>Post</p>
           <p>${profile._count.posts}</p>
           
