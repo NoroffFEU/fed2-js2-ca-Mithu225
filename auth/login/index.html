@@ -25,7 +25,7 @@
           class="flex flex-col text-lg mx-auto max-w-[40rem] pt-4"
           name="login"
         >
-          <div class="login-form">
+          <div class="w-full flex flex-col gap-4 text-left">
             <label class="text-purple-600" for="email">Email</label>
             <input
               class="mb-4 p-2 text-base border-2 border-transparent rounded-md"
@@ -57,12 +57,20 @@
             />
           </div>
           <div id="errors" class="error text-red-500"></div>
-          <div class="login-click">
-            <button id="login-submit-button" type="submit" class="login-button">
+          <div class="text-center p-8">
+            <button
+              id="login-submit-button"
+              type="submit"
+              class="bg-gradient-to-tr from-[#9747ff] to-[#07d8ba] text-white p-4 w-[10rem] border-0 rounded-md text-lg font-bold cursor-pointer transition-colors duration-300 ease-in-out hover:bg-gradient-to-tr hover:from-[#feb47b] hover:to-[#ff7e5f]"
+            >
               LOGIN
             </button>
           </div>
-          <a href="/auth/register/" class="switch-register">REGISTER</a>
+          <a
+            href="/auth/register/"
+            class="text-lg font-bold bg-gradient-to-tr from-[#9747ff] to-[#07d8ba] bg-clip-text text-transparent underline decoration-[#8c5fff] decoration-3 text-center"
+            >REGISTER</a
+          >
         </form>
       </main>
     </div>

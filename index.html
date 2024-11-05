@@ -83,15 +83,34 @@
             </div>
           </div>
         </header>
-        <div class="body-top">
+        <div class="flex items-center justify-between p-8">
           <div class="flex gap-4 w-20 h-16" id="avatar-home"></div>
 
-          <div class="dropdown">
-            <button class="dropdown-button" id="selected-post">All post</button>
+          <div
+            class="ml-auto relative inline-block border-2 border-[#b890f4] rounded-md cursor-pointer text-right group"
+          >
+            <button
+              class="bg-white text-black border-0 text-base py-4 px-6 focus:outline-none"
+              id="selected-post"
+            >
+              All post
+            </button>
             <ion-icon class="p-1" name="caret-down-outline"></ion-icon>
-            <div class="dropdown-content">
-              <button id="selected-all-post">All post</button>
-              <button id="selected-my-post">My post</button>
+            <div
+              class="absolute right-0 text-left bg-[#b890f4] min-w-[160px] rounded-md shadow-lg z-10 hidden group-hover:block"
+            >
+              <button
+                id="selected-all-post"
+                class="text-[#875acb] py-3 px-4 w-full border-0 bg-transparent cursor-pointer hover:bg-[#875acb] hover:text-white"
+              >
+                All post
+              </button>
+              <button
+                id="selected-my-post"
+                class="text-[#875acb] py-3 px-4 w-full border-0 bg-transparent cursor-pointer hover:bg-[#875acb] hover:text-white"
+              >
+                My post
+              </button>
             </div>
           </div>
         </div>
@@ -99,11 +118,11 @@
           id="message-box"
           class="hidden text-center pb-4 text-green-500"
         ></div>
-        <div class="body-container">
+        <div class="text-center">
           <input
             type="text"
             placeholder="What are you thinking about?"
-            class="status-input"
+            class="w-1/3 py-2 px-6 text-base border border-gray-300 rounded-lg outline-none"
             id="statusInput"
           />
         </div>
@@ -120,7 +139,9 @@
       class="mt-12 w-full text-center py-5 text-white"
       style="background: linear-gradient(135deg, #9747ff, #07d8ba)"
     >
-      <p class="flex justify-center items-center text-base">&copy; 2024 Snappo. All rights reserved.</p>
+      <p class="flex justify-center items-center text-base">
+        &copy; 2024 Snappo. All rights reserved.
+      </p>
     </footer>
   </body>
 </html>
