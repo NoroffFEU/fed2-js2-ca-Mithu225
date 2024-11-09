@@ -19,7 +19,9 @@
             alt="Snappo logo"
           />
 
-          <h1 class="text-[#a9a8a8] m-0 text-left">Connect. Share. Inspire</h1>
+          <h1 class="text-[var(--color-title)] m-0 text-left">
+            Connect. Share. Inspire
+          </h1>
         </div>
         <form
           class="flex flex-col text-lg mx-auto max-w-[40rem] pt-4"
@@ -28,13 +30,7 @@
           <div class="w-full flex flex-col gap-4 text-left py-0 px-8 sm:px-0">
             <label class="text-purple-600" for="email">Email</label>
             <input
-              class="mb-4 p-2 text-base border-2 border-transparent rounded-md"
-              style="
-                background-image: linear-gradient(white, white),
-                  linear-gradient(135deg, #e0b230, #07d8ba);
-                background-origin: border-box;
-                background-clip: padding-box, border-box;
-              "
+              class="mb-4 p-2 text-base border-2 border-transparent rounded-md bg-origin-border [background-image:linear-gradient(white,white),linear-gradient(135deg,var(--color-gradient-from),var(--color-gradient-to))] [background-clip:padding-box,border-box]"
               id="email"
               type="email"
               name="email"
@@ -43,13 +39,7 @@
 
             <label class="text-purple-600" for="password">Password</label>
             <input
-              class="mb-4 p-2 text-base border-2 border-transparent rounded-md"
-              style="
-                background-image: linear-gradient(white, white),
-                  linear-gradient(135deg, #e0b230, #07d8ba);
-                background-origin: border-box;
-                background-clip: padding-box, border-box;
-              "
+              class="mb-4 p-2 text-base border-2 border-transparent rounded-md bg-origin-border [background-image:linear-gradient(white,white),linear-gradient(135deg,var(--color-gradient-from),var(--color-gradient-to))] [background-clip:padding-box,border-box]"
               type="password"
               name="password"
               id="password"
@@ -61,14 +51,14 @@
             <button
               id="login-submit-button"
               type="submit"
-              class="bg-gradient-to-tr from-[#9747ff] to-[#07d8ba] text-white p-4 w-[10rem] border-0 rounded-md text-lg font-bold cursor-pointer transition-colors duration-300 ease-in-out hover:bg-gradient-to-tr hover:from-[#feb47b] hover:to-[#ff7e5f]"
+              class="bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] text-white p-4 w-[10rem] border-0 rounded-md text-lg font-bold cursor-pointer transition-colors duration-300 ease-in-out hover:bg-gradient-to-tr hover:from-[#feb47b] hover:to-[#ff7e5f]"
             >
               LOGIN
             </button>
           </div>
           <a
             href="/auth/register/"
-            class="text-lg font-bold bg-gradient-to-tr from-[#9747ff] to-[#07d8ba] bg-clip-text text-transparent underline decoration-[#8c5fff] decoration-3 text-center hover:decoration-4 hover:underline-offset-4 hover:from-[#ff7e5f] hover:to-[#feb47b]"
+            class="text-lg font-bold bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] bg-clip-text text-transparent underline decoration-[#8c5fff] decoration-3 text-center hover:decoration-4 hover:underline-offset-4 hover:from-[#ff7e5f] hover:to-[#feb47b]"
             >REGISTER</a
           >
         </form>
@@ -76,8 +66,7 @@
     </div>
 
     <footer
-      class="mt-12 w-full text-center py-5 text-white"
-      style="background: linear-gradient(135deg, #9747ff, #07d8ba)"
+      class="mt-12 w-full text-center py-5 text-white bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)]"
     >
       <p>&copy; 2024 Snappo. All rights reserved.</p>
     </footer>

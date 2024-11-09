@@ -36,16 +36,16 @@ onRenderBySelector(
 );
 onRenderBySelector(
   "#follow-details",
-  `<div class="bg-gradient-to-tr from-[#d28509] to-[#9747ff] text-white w-40 border-none rounded-lg text-lg font-bold cursor-pointer transition-all duration-300 ease-in-out text-center p-4 hover:bg-gradient-to-tr hover:from-[#ff7e5f] hover:to-[#ff33cc]">
+  `<div class="bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] text-white w-40 border-none rounded-lg text-lg font-bold cursor-pointer transition-all duration-300 ease-in-out text-center p-4 hover:bg-gradient-to-tr hover:from-[#ff7e5f] hover:to-[#ff33cc]">
           <p>Follower</p>
           <p>${profile._count.followers}</p>
         </div>
-        <div class="bg-gradient-to-tr from-[#d28509] to-[#9747ff] text-white w-40 border-none rounded-lg text-lg font-bold cursor-pointer transition-all duration-300 ease-in-out text-center p-4 hover:bg-gradient-to-tr hover:from-[#ff7e5f] hover:to-[#ff33cc]">
+        <div class="bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] text-white w-40 border-none rounded-lg text-lg font-bold cursor-pointer transition-all duration-300 ease-in-out text-center p-4 hover:bg-gradient-to-tr hover:from-[#ff7e5f] hover:to-[#ff33cc]">
           <p>Followings</p>
           <p>${profile._count.following}</p>
 
         </div>
-        <div class="bg-gradient-to-tr from-[#d28509] to-[#9747ff] text-white w-40 border-none rounded-lg text-lg font-bold cursor-pointer transition-all duration-300 ease-in-out text-center p-4 hover:bg-gradient-to-tr hover:from-[#ff7e5f] hover:to-[#ff33cc]">
+        <div class="bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] text-white w-40 border-none rounded-lg text-lg font-bold cursor-pointer transition-all duration-300 ease-in-out text-center p-4 hover:bg-gradient-to-tr hover:from-[#ff7e5f] hover:to-[#ff33cc]">
           <p>Post</p>
           <p>${profile._count.posts}</p>
           
@@ -54,7 +54,7 @@ onRenderBySelector(
 function renderpost(posts) {
   const response = posts.map((item) => {
     return `
-          <div class="w-11/12 sm:w-11/12 md:w-11/12 lg:w-1/2 p-5 border-4 rounded-md relative overflow-hidden" style="border-color: transparent; background-image: linear-gradient(white, white), linear-gradient(135deg, #9747ff, #07d8ba); background-origin: border-box; background-clip: padding-box, border-box;">
+          <div class="w-11/12 sm:w-11/12 md:w-11/12 lg:w-1/2 p-5 mb-4 text-base border-2 border-transparent rounded-md bg-origin-border [background-image:linear-gradient(white,white),linear-gradient(135deg,var(--color-gradient-from),var(--color-gradient-to))] [background-clip:padding-box,border-box]">
             <div class="flex gap-4">
               <div class="flex " items-center justify-between" id="post">
                 <img class="flex items-center rounded-full w-20 h-16 gap-1" src="${
@@ -100,7 +100,7 @@ function renderpost(posts) {
                <div class="post-list">
   <div class="post-item" id="post-1">
     <button id="see-more" 
-  class="border-none bg-white text-[#875acb] cursor-pointer" type=button data-id="${
+  class="border-none bg-white text-purple-600 cursor-pointer" type=button data-id="${
     item.id
   }">See more..</button></div></div>
             <div class="flex flex-col items-start">

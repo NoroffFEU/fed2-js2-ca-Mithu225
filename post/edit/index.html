@@ -17,68 +17,70 @@
     ></script>
   </head>
   <body>
-   <header
-          class="flex flex-wrap justify-between items-center bg-white p-2.5 px-5"
-        >
-          <div class="header-left">
-            <a href="/">
-              <img
-                class="cursor-pointer"
-                src="/asset/snappo.png"
-                alt="Snappo logo"
-              />
-            </a>
-          </div>
+    <header
+      class="flex flex-wrap justify-between items-center bg-white p-2.5 px-5"
+    >
+      <div class="header-left">
+        <a href="/">
+          <img
+            class="cursor-pointer"
+            src="/asset/snappo.png"
+            alt="Snappo logo"
+          />
+        </a>
+      </div>
 
-          <div class="flex flex-grow justify-start items-center mt-2 sm:mt-0 pl-7 md:pl-4">
-            <input
-              type="text"
-              placeholder="Search...."
-              class="w-3/4 sm:w-1/2 p-2 text-lg border border-gray-300 rounded-full outline-none "
-            />
-            <button class="cursor-pointer border-0 ml-[-40px] bg-white">
-              <ion-icon
-                class="text-lg text-[#a9a8a8]"
-                name="search-outline"
-              ></ion-icon>
-            </button>
-          </div>
+      <div
+        class="flex flex-grow justify-start items-center mt-2 sm:mt-0 pl-7 md:pl-4"
+      >
+        <input
+          type="text"
+          placeholder="Search...."
+          class="w-3/4 sm:w-1/2 p-2 text-lg border border-gray-300 rounded-full outline-none"
+        />
+        <button class="cursor-pointer border-0 ml-[-40px] bg-white">
+          <ion-icon
+            class="text-lg text-[var(--color-title)]"
+            name="search-outline"
+          ></ion-icon>
+        </button>
+      </div>
 
-          <div class="flex gap-4 mt-3 sm:mt-0 justify-start sm:justify-end">
-            <div class="flex items-center gap-2">
-              <button
-                id="list"
-                class="w-10 h-10 bg-gradient-to-r from-[#a060f0] to-[#5cc9f5] p-1 rounded transition-transform duration-300 border-none"
-              >
-                <ion-icon
-                  class="text-white cursor-pointer"
-                  size="large"
-                  name="newspaper-outline"
-                ></ion-icon>
-              </button>
-              <button
-                id="profile"
-                class="w-10 h-10 bg-gradient-to-r from-[#a060f0] to-[#5cc9f5] p-1 rounded transition-transform duration-300 border-none"
-              >
-                <ion-icon
-                  class="text-white cursor-pointer"
-                  size="large"
-                  name="person-circle-outline"
-                ></ion-icon>
-              </button>
-              <button
-                id="logout-button"
-                class="w-10 h-10 bg-gradient-to-r from-[#a060f0] to-[#5cc9f5] p-1 rounded transition-transform duration-300 border-none"
-              >
-                <ion-icon
-                  class="text-white cursor-pointer"
-                  size="large"
-                  name="log-out-outline"
-                ></ion-icon>
-              </button>
-            </div>
-          </div>
-        </header>
+      <div class="flex gap-4 mt-3 sm:mt-0 justify-start sm:justify-end">
+        <div class="flex items-center gap-2">
+          <button
+            id="list"
+            class="w-10 h-10 bg-gradient-to-r from-[#a060f0] to-[#5cc9f5] p-1 rounded transition-transform duration-300 border-none"
+          >
+            <ion-icon
+              class="text-white cursor-pointer"
+              size="large"
+              name="newspaper-outline"
+            ></ion-icon>
+          </button>
+          <button
+            id="profile"
+            class="w-10 h-10 bg-gradient-to-r from-[#a060f0] to-[#5cc9f5] p-1 rounded transition-transform duration-300 border-none"
+          >
+            <ion-icon
+              class="text-white cursor-pointer"
+              size="large"
+              name="person-circle-outline"
+            ></ion-icon>
+          </button>
+          <button
+            id="logout-button"
+            class="w-10 h-10 bg-gradient-to-r from-[#a060f0] to-[#5cc9f5] p-1 rounded transition-transform duration-300 border-none"
+          >
+            <ion-icon
+              class="text-white cursor-pointer"
+              size="large"
+              name="log-out-outline"
+            ></ion-icon>
+          </button>
+        </div>
+      </div>
+    </header>
 
     <div class="container-text-center text-[#817575] text-2xl">
       <h1 class="text-center text-[#817575] pt-4 text-3xl">Edit Post</h1>
@@ -91,13 +93,7 @@
       <div class="flex flex-col gap-4">
         <label class="text-purple-600" for="post-title">Title:</label>
         <input
-          class="mb-4 p-2 text-base border-2 border-transparent rounded-md"
-          style="
-            background-image: linear-gradient(white, white),
-              linear-gradient(135deg, #e0b230, #07d8ba);
-            background-origin: border-box;
-            background-clip: padding-box, border-box;
-          "
+          class="mb-4 p-2 text-base border-2 border-transparent rounded-md bg-origin-border [background-image:linear-gradient(white,white),linear-gradient(135deg,var(--color-gradient-from),var(--color-gradient-to))] [background-clip:padding-box,border-box]"
           type="text"
           id="post-title"
           name="title"
@@ -106,13 +102,7 @@
 
         <label class="text-purple-600" for="post-content">Content:</label>
         <textarea
-          class="mb-4 p-2 text-base border-2 border-transparent rounded-md"
-          style="
-            background-image: linear-gradient(white, white),
-              linear-gradient(135deg, #e0b230, #07d8ba);
-            background-origin: border-box;
-            background-clip: padding-box, border-box;
-          "
+          class="mb-4 p-2 text-base border-2 border-transparent rounded-md bg-origin-border [background-image:linear-gradient(white,white),linear-gradient(135deg,var(--color-gradient-from),var(--color-gradient-to))] [background-clip:padding-box,border-box]"
           aria-label="message"
           rows="10"
           cols="45"
@@ -122,13 +112,7 @@
 
         <label class="text-purple-600" for="key-words">Tags:</label>
         <input
-          class="mb-4 p-2 text-base border-2 border-transparent rounded-md"
-          style="
-            background-image: linear-gradient(white, white),
-              linear-gradient(135deg, #e0b230, #07d8ba);
-            background-origin: border-box;
-            background-clip: padding-box, border-box;
-          "
+          class="mb-4 p-2 text-base border-2 border-transparent rounded-md bg-origin-border [background-image:linear-gradient(white,white),linear-gradient(135deg,var(--color-gradient-from),var(--color-gradient-to))] [background-clip:padding-box,border-box]"
           type="strings"
           id="keywords"
           name="tags"
@@ -136,13 +120,7 @@
 
         <label class="text-purple-600" for="post-image">Image URL:</label>
         <input
-          class="mb-4 p-2 text-base border-2 border-transparent rounded-md"
-          style="
-            background-image: linear-gradient(white, white),
-              linear-gradient(135deg, #e0b230, #07d8ba);
-            background-origin: border-box;
-            background-clip: padding-box, border-box;
-          "
+          class="mb-4 p-2 text-base border-2 border-transparent rounded-md bg-origin-border [background-image:linear-gradient(white,white),linear-gradient(135deg,var(--color-gradient-from),var(--color-gradient-to))] [background-clip:padding-box,border-box]"
           type="url"
           id="post-image"
           name="image-url"
@@ -150,32 +128,26 @@
 
         <label class="text-purple-600" for="image-alt">Image Alt:</label>
         <input
-          class="mb-4 p-2 text-base border-2 border-transparent rounded-md"
-          style="
-            background-image: linear-gradient(white, white),
-              linear-gradient(135deg, #e0b230, #07d8ba);
-            background-origin: border-box;
-            background-clip: padding-box, border-box;
-          "
+          class="mb-4 p-2 text-base border-2 border-transparent rounded-md bg-origin-border [background-image:linear-gradient(white,white),linear-gradient(135deg,var(--color-gradient-from),var(--color-gradient-to))] [background-clip:padding-box,border-box]"
           type="string"
           id="post-image-alt"
           name="image-alt"
         />
       </div>
       <div id="message-box" class="text-center pb-4"></div>
-      <div id="errors" style="color: red"></div>
+      <div id="errors text-red"></div>
       <div class="flex gap-8 p-12 justify-center">
         <button
           id="edit-post-submit-button"
           type="submit"
-          class="bg-gradient-to-r from-[#07c0d8] to-[#9747ff] text-white py-4 px-8 w-40 rounded-lg font-bold cursor-pointer transition-colors duration-300 ease-in-out"
+          class="bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] text-white p-4 w-[10rem] border-0 rounded-md text-lg font-bold cursor-pointer transition-[background] duration-300 ease-in-out hover:bg-gradient-to-tr hover:from-[#feb47b] hover:to-[#ff7e5f]"
         >
           Update
         </button>
         <button
           id="cancel-post-submit-button"
           type="button"
-          class="bg-gradient-to-r from-[#07c0d8] to-[#9747ff] text-white py-4 px-8 w-40 rounded-lg font-bold cursor-pointer transition-colors duration-300 ease-in-out"
+          class="bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] text-white p-4 w-[10rem] border-0 rounded-md text-lg font-bold cursor-pointer transition-[background] duration-300 ease-in-out hover:bg-gradient-to-tr hover:from-[#feb47b] hover:to-[#ff7e5f]"
         >
           Cancel
         </button>
