@@ -54,7 +54,7 @@ onRenderBySelector(
 function renderpost(posts) {
   const response = posts.map((item) => {
     return `
-          <div class="w-1/2 p-5 border-4 rounded-md relative overflow-hidden" style="border-color: transparent; background-image: linear-gradient(white, white), linear-gradient(135deg, #9747ff, #07d8ba); background-origin: border-box; background-clip: padding-box, border-box;">
+          <div class="w-11/12 sm:w-11/12 md:w-11/12 lg:w-1/2 p-5 border-4 rounded-md relative overflow-hidden" style="border-color: transparent; background-image: linear-gradient(white, white), linear-gradient(135deg, #9747ff, #07d8ba); background-origin: border-box; background-clip: padding-box, border-box;">
             <div class="flex gap-4">
               <div class="flex " items-center justify-between" id="post">
                 <img class="flex items-center rounded-full w-20 h-16 gap-1" src="${

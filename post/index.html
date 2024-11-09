@@ -17,64 +17,68 @@
     ></script>
   </head>
   <body>
-    <header class="flex justify-between items-center bg-white p-2.5 px-5">
-      <div class="header-left">
-        <a href="/">
-          <img
-            class="cursor-pointer"
-            src="/asset/snappo.png"
-            alt="Snappo logo"
-          />
-        </a>
-      </div>
-      <div class="flex flex-grow justify-center items-center">
-        <input
-          type="text"
-          placeholder="Search...."
-          class="w-1/2 p-2 text-lg border border-gray-300 rounded-full outline-none"
-        />
-        <button class="cursor-pointer border-0 ml-[-40px] bg-white">
-          <ion-icon
-            class="text-lg text-[#a9a8a8]"
-            name="search-outline"
-          ></ion-icon>
-        </button>
-      </div>
-      <div class="flex gap-4">
-        <div class="flex items-center gap-2">
-          <button
-            id="list"
-            class="w-10 h-10 bg-gradient-to-r from-[#a060f0] to-[#5cc9f5] p-1 rounded transition-transform duration-300 border-none"
-          >
-            <ion-icon
-              class="text-white cursor-pointer"
-              size="large"
-              name="newspaper-outline"
-            ></ion-icon>
-          </button>
-          <button
-            id="profile"
-            class="w-10 h-10 bg-gradient-to-r from-[#a060f0] to-[#5cc9f5] p-1 rounded transition-transform duration-300 border-none"
-          >
-            <ion-icon
-              class="text-white cursor-pointer"
-              size="large"
-              name="person-circle-outline"
-            ></ion-icon>
-          </button>
-          <button
-            id="logout-button"
-            class="w-10 h-10 bg-gradient-to-r from-[#a060f0] to-[#5cc9f5] p-1 rounded transition-transform duration-300 border-none"
-          >
-            <ion-icon
-              class="text-white cursor-pointer"
-              size="large"
-              name="log-out-outline"
-            ></ion-icon>
-          </button>
-        </div>
-      </div>
-    </header>
+   <header
+          class="flex flex-wrap justify-between items-center bg-white p-2.5 px-5"
+        >
+          <div class="header-left">
+            <a href="/">
+              <img
+                class="cursor-pointer"
+                src="/asset/snappo.png"
+                alt="Snappo logo"
+              />
+            </a>
+          </div>
+
+          <div class="flex flex-grow justify-start items-center mt-2 sm:mt-0 pl-7 md:pl-4">
+            <input
+              type="text"
+              placeholder="Search...."
+              class="w-3/4 sm:w-1/2 p-2 text-lg border border-gray-300 rounded-full outline-none "
+            />
+            <button class="cursor-pointer border-0 ml-[-40px] bg-white">
+              <ion-icon
+                class="text-lg text-[#a9a8a8]"
+                name="search-outline"
+              ></ion-icon>
+            </button>
+          </div>
+
+          <div class="flex gap-4 mt-3 sm:mt-0 justify-start sm:justify-end">
+            <div class="flex items-center gap-2">
+              <button
+                id="list"
+                class="w-10 h-10 bg-gradient-to-r from-[#a060f0] to-[#5cc9f5] p-1 rounded transition-transform duration-300 border-none"
+              >
+                <ion-icon
+                  class="text-white cursor-pointer"
+                  size="large"
+                  name="newspaper-outline"
+                ></ion-icon>
+              </button>
+              <button
+                id="profile"
+                class="w-10 h-10 bg-gradient-to-r from-[#a060f0] to-[#5cc9f5] p-1 rounded transition-transform duration-300 border-none"
+              >
+                <ion-icon
+                  class="text-white cursor-pointer"
+                  size="large"
+                  name="person-circle-outline"
+                ></ion-icon>
+              </button>
+              <button
+                id="logout-button"
+                class="w-10 h-10 bg-gradient-to-r from-[#a060f0] to-[#5cc9f5] p-1 rounded transition-transform duration-300 border-none"
+              >
+                <ion-icon
+                  class="text-white cursor-pointer"
+                  size="large"
+                  name="log-out-outline"
+                ></ion-icon>
+              </button>
+            </div>
+          </div>
+        </header>
     <div>
       <div class="text-center text-[#817575] text-2xl">
         <h1>Single Post Page</h1>
