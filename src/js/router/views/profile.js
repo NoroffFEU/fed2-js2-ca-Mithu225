@@ -36,16 +36,16 @@ onRenderBySelector(
 );
 onRenderBySelector(
   "#follow-details",
-  `<div class="bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] text-white w-40 border-none rounded-lg text-lg font-bold cursor-pointer transition-all duration-300 ease-in-out text-center p-4 hover:bg-gradient-to-tr hover:from-[#ff7e5f] hover:to-[#ff33cc]">
+  `<div class="bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] text-white w-40 border-none rounded-lg text-lg font-bold cursor-pointer transition-all duration-300 ease-in-out text-center p-4 hover:bg-gradient-to-tr hover:from-[var(--color-gradient-hover-to)] hover:to-[var(--color-gradient-hover-to)]">
           <p>Follower</p>
           <p>${profile._count.followers}</p>
         </div>
-        <div class="bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] text-white w-40 border-none rounded-lg text-lg font-bold cursor-pointer transition-all duration-300 ease-in-out text-center p-4 hover:bg-gradient-to-tr hover:from-[#ff7e5f] hover:to-[#ff33cc]">
+        <div class="bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] text-white w-40 border-none rounded-lg text-lg font-bold cursor-pointer transition-all duration-300 ease-in-out text-center p-4 hover:bg-gradient-to-tr hover:from-[var(--color-gradient-hover-to)] hover:to-[var(--color-gradient-hover-to)]">
           <p>Followings</p>
           <p>${profile._count.following}</p>
 
         </div>
-        <div class="bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] text-white w-40 border-none rounded-lg text-lg font-bold cursor-pointer transition-all duration-300 ease-in-out text-center p-4 hover:bg-gradient-to-tr hover:from-[#ff7e5f] hover:to-[#ff33cc]">
+        <div class="bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] text-white w-40 border-none rounded-lg text-lg font-bold cursor-pointer transition-all duration-300 ease-in-out text-center p-4 hover:bg-gradient-to-tr hover:from-[var(--color-gradient-hover-to)] hover:to-[var(--color-gradient-hover-to)]">
           <p>Post</p>
           <p>${profile._count.posts}</p>
           

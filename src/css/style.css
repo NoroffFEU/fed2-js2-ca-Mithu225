@@ -6,11 +6,9 @@
 @layer base {
   :root {
     --color-title: #a9a8a8;
-    --color-primary: 255 115 179;
-    --color-secondary: 111 114 185;
+    --color-gradient-hover-from: #feb47b;
+    --color-gradient-hover-to: #ff7e5f;
     --color-gradient-from: #9747ff;
     --color-gradient-to: #07d8ba;
-
-    /* ... */
   }
 }

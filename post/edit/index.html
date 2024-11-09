@@ -50,7 +50,7 @@
         <div class="flex items-center gap-2">
           <button
             id="list"
-            class="w-10 h-10 bg-gradient-to-r from-[#a060f0] to-[#5cc9f5] p-1 rounded transition-transform duration-300 border-none"
+            class="w-10 h-10 bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] p-1 border-0 rounded-md text-lg font-bold cursor-pointer transition-[background] duration-300 ease-in-out hover:bg-gradient-to-tr hover:from-[var(--color-gradient-hover-from)] hover:to-[var(--color-gradient-hover-to)]"
           >
             <ion-icon
               class="text-white cursor-pointer"
@@ -60,7 +60,7 @@
           </button>
           <button
             id="profile"
-            class="w-10 h-10 bg-gradient-to-r from-[#a060f0] to-[#5cc9f5] p-1 rounded transition-transform duration-300 border-none"
+            class="w-10 h-10 bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] p-1 border-0 rounded-md text-lg font-bold cursor-pointer transition-[background] duration-300 ease-in-out hover:bg-gradient-to-tr hover:from-[var(--color-gradient-hover-from)] hover:to-[var(--color-gradient-hover-to)]"
           >
             <ion-icon
               class="text-white cursor-pointer"
@@ -70,7 +70,7 @@
           </button>
           <button
             id="logout-button"
-            class="w-10 h-10 bg-gradient-to-r from-[#a060f0] to-[#5cc9f5] p-1 rounded transition-transform duration-300 border-none"
+            class="w-10 h-10 bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] p-1 border-0 rounded-md text-lg font-bold cursor-pointer transition-[background] duration-300 ease-in-out hover:bg-gradient-to-tr hover:from-[var(--color-gradient-hover-from)] hover:to-[var(--color-gradient-hover-to)]"
           >
             <ion-icon
               class="text-white cursor-pointer"
@@ -82,8 +82,10 @@
       </div>
     </header>
 
-    <div class="container-text-center text-[#817575] text-2xl">
-      <h1 class="text-center text-[#817575] pt-4 text-3xl">Edit Post</h1>
+    <div class="container-text-center text-[var(--color-title)] text-2xl">
+      <h1 class="text-center text-[var(--color-title)] pt-4 text-3xl">
+        Edit Post
+      </h1>
     </div>
 
     <form
@@ -140,14 +142,14 @@
         <button
           id="edit-post-submit-button"
           type="submit"
-          class="bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] text-white p-4 w-[10rem] border-0 rounded-md text-lg font-bold cursor-pointer transition-[background] duration-300 ease-in-out hover:bg-gradient-to-tr hover:from-[#feb47b] hover:to-[#ff7e5f]"
+          class="bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] text-white p-4 w-[10rem] border-0 rounded-md text-lg font-bold cursor-pointer transition-[background] duration-300 ease-in-out hover:bg-gradient-to-tr hover:from-[var(--color-gradient-hover-from)] hover:to-[var(--color-gradient-hover-to)]"
         >
           Update
         </button>
         <button
           id="cancel-post-submit-button"
           type="button"
-          class="bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] text-white p-4 w-[10rem] border-0 rounded-md text-lg font-bold cursor-pointer transition-[background] duration-300 ease-in-out hover:bg-gradient-to-tr hover:from-[#feb47b] hover:to-[#ff7e5f]"
+          class="bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] text-white p-4 w-[10rem] border-0 rounded-md text-lg font-bold cursor-pointer transition-[background] duration-300 ease-in-out hover:bg-gradient-to-tr hover:from-[var(--color-gradient-hover-from)] hover:to-[var(--color-gradient-hover-to)]"
         >
           Cancel
         </button>
