@@ -24,70 +24,70 @@
   <body>
     <div class="flex flex-col min-h-screen">
       <main class="flex-1">
-        <header
-          class="flex flex-wrap justify-between items-center bg-white p-2.5 px-5"
-        >
-          <div class="header-left">
-            <a href="/">
-              <img
-                class="cursor-pointer"
-                src="/asset/snappo.png"
-                alt="Snappo logo"
-              />
-            </a>
-          </div>
+       <header class="flex flex-col sm:flex-row justify-between items-center bg-white p-2.5 px-5 gap-4">
+  
+  <div class="w-full sm:w-auto flex justify-center sm:justify-start">
+    <a href="/">
+      <img
+        class="cursor-pointer"
+        src="/asset/snappo.png"
+        alt="Snappo logo"
+      />
+    </a>
+  </div>
 
-          <div
-            class="flex flex-grow justify-start items-center mt-2 sm:mt-0 pl-7 md:pl-4"
-          >
-            <input
-              type="text"
-              placeholder="Search...."
-              class="w-3/4 sm:w-1/2 p-2 text-lg border border-gray-300 rounded-full outline-none"
-            />
-            <button class="cursor-pointer border-0 ml-[-40px] bg-white">
-              <ion-icon
-                class="text-lg text-[var(--color-title)]"
-                name="search-outline"
-              ></ion-icon>
-            </button>
-          </div>
+  
+  <div class="w-full sm:flex-grow flex justify-center sm:justify-start items-center sm:pl-4">
+    <div class="relative w-full sm:w-1/2">
+      <input
+        type="text"
+        placeholder="Search...."
+        class="w-full p-2 text-lg border border-gray-300 rounded-full outline-none"
+      />
+      <button class="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer border-0 bg-white">
+        <ion-icon
+          class="text-lg text-[var(--color-title)]"
+          name="search-outline"
+        ></ion-icon>
+      </button>
+    </div>
+  </div>
 
-          <div class="flex gap-4 mt-3 sm:mt-0 justify-start sm:justify-end">
-            <div class="flex items-center gap-2">
-              <button
-                id="list"
-                class="w-10 h-10 bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] p-1 border-0 rounded-md text-lg font-bold cursor-pointer transition-[background] duration-300 ease-in-out hover:bg-gradient-to-tr hover:from-[var(--color-gradient-hover-from)] hover:to-[var(--color-gradient-hover-to)]"
-              >
-                <ion-icon
-                  class="text-white cursor-pointer"
-                  size="large"
-                  name="newspaper-outline"
-                ></ion-icon>
-              </button>
-              <button
-                id="profile"
-                class="w-10 h-10 bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] p-1 border-0 rounded-md text-lg font-bold cursor-pointer transition-[background] duration-300 ease-in-out hover:bg-gradient-to-tr hover:from-[var(--color-gradient-hover-from)] hover:to-[var(--color-gradient-hover-to)]"
-              >
-                <ion-icon
-                  class="text-white cursor-pointer"
-                  size="large"
-                  name="person-circle-outline"
-                ></ion-icon>
-              </button>
-              <button
-                id="logout-button"
-                class="w-10 h-10 bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] p-1 border-0 rounded-md text-lg font-bold cursor-pointer transition-[background] duration-300 ease-in-out hover:bg-gradient-to-tr hover:from-[var(--color-gradient-hover-from)] hover:to-[var(--color-gradient-hover-to)]"
-              >
-                <ion-icon
-                  class="text-white cursor-pointer"
-                  size="large"
-                  name="log-out-outline"
-                ></ion-icon>
-              </button>
-            </div>
-          </div>
-        </header>
+  <div class="w-full sm:w-auto flex justify-center sm:justify-end">
+    <div class="flex items-center gap-2">
+      <button
+        id="list"
+        class="w-10 h-10 bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] p-1 border-0 rounded-md text-lg font-bold cursor-pointer transition-[background] duration-300 ease-in-out hover:bg-gradient-to-tr hover:from-[var(--color-gradient-hover-from)] hover:to-[var(--color-gradient-hover-to)]"
+      >
+        <ion-icon
+          class="text-white cursor-pointer"
+          size="large"
+          name="newspaper-outline"
+        ></ion-icon>
+      </button>
+      <button
+        id="profile"
+        class="w-10 h-10 bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] p-1 border-0 rounded-md text-lg font-bold cursor-pointer transition-[background] duration-300 ease-in-out hover:bg-gradient-to-tr hover:from-[var(--color-gradient-hover-from)] hover:to-[var(--color-gradient-hover-to)]"
+      >
+        <ion-icon
+          class="text-white cursor-pointer"
+          size="large"
+          name="person-circle-outline"
+        ></ion-icon>
+      </button>
+      <button
+        id="logout-button"
+        class="w-10 h-10 bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] p-1 border-0 rounded-md text-lg font-bold cursor-pointer transition-[background] duration-300 ease-in-out hover:bg-gradient-to-tr hover:from-[var(--color-gradient-hover-from)] hover:to-[var(--color-gradient-hover-to)]"
+      >
+        <ion-icon
+          class="text-white cursor-pointer"
+          size="large"
+          name="log-out-outline"
+        ></ion-icon>
+      </button>
+    </div>
+  </div>
+</header>
 
         <div class="flex flex-wrap items-center justify-between p-8">
           <div class="flex gap-4 w-20 h-16" id="avatar-home"></div>
