@@ -14,34 +14,36 @@ async function displaySinglePost() {
     const { data: item } = await singlePost(id);
 
     const respone = `
-          <div class="post-card">
-            <div class="post-info">
-              <div class="user-info" id="post">
-                <img class="avatar" src="${item.author.avatar.url}" alt="${
-      item.author.avatar.alt
-    }" />
+          <div class="w-1/2 p-5 mb-4 text-base border-2 border-transparent rounded-md bg-origin-border [background-image:linear-gradient(white,white),linear-gradient(135deg,var(--color-gradient-from),var(--color-gradient-to))] [background-clip:padding-box,border-box]">
+            <div class="flex gap-4">
+              <div class="flex items-center justify-between" id="post">
+                <img class="flex items-center rounded-full w-20 h-16" src="${
+                  item.author.avatar.url
+                }" alt="${item.author.avatar.alt}" />
               </div>
-              <div class="user-details">
+              <div class="flex justify-between w-full">
                 <div class="user">
-                  <p class="username" id="username" data-username="${
+                  <p class="text-purple-700 text-lg font-bold cursor-pointer py-1" id="username" data-username="${
                     item.author.name
                   }">
                   ${item.author.name}
                 </p>
-                  <p class="time">${formatDateTime(item.created)}</p>
+                  <p class="text-gray-500 text-sm">${formatDateTime(
+                    item.created
+                  )}</p>
                 </div>
        
   
-                <div class="edit-post" >
+                <div class="ml-auto flex gap-2" >
                 ${
                   user.name === item.author.name
                     ? `
-                  <button id="edit-button" type="button" data-id="${item.id}">
-                    <ion-icon class="edit-icon" name="create-outline">
+                  <button id="edit-button" class="border-0 bg-white" type="button" data-id="${item.id}">
+                    <ion-icon class="text-purple-600 "edit-icon text-xl cursor-pointer"" name="create-outline">
                     </ion-icon>
                   </button>
-                  <button id="delete-button" type="button" data-id="${item.id}">
-                    <ion-icon class="delete-icon" name="trash-outline"></ion-icon></button>
+                  <button id="delete-button" class="border-0 bg-white" type="button" data-id="${item.id}">
+                    <ion-icon class="text-purple-600 "delete-icon text-xl cursor-pointer"" name="trash-outline"></ion-icon></button>
                   
                   `
                     : ""
@@ -51,42 +53,42 @@ async function displaySinglePost() {
              
             </div>
 
-            <p class="post-content">
+            <p class="my-4 text-base leading-6 break-words">
               ${item.title}
             </p>
-             <p class="post-content">
+             <p class="my-4 text-base leading-6 break-words">
               ${item.body}
             </p>
                <div class="post-list">
             <div class="post-item" id="post-1">
             </div>
-            <div class="interaction-bar">
+            <div class="flex flex-col items-start">
             ${
               item.media && item.media.url
                 ? `<div class="upload-content">
-                <img class="upload-img" src="${item.media.url}" />
+                <img class="w-full py-4" src="${item.media.url}" />
               </div>`
                 : ""
             }
             
-              <div class="likes">
+              <div class="flex items-center text-purple-600 mb-2.5 text-xl">
                 <ion-icon class="heart" name="heart-outline"></ion-icon>
                 <p>3</p>
               </div>
                
-              <hr />
-              <div class="actions">
-                <div class="action">
+              <hr class="w-full border-b border-gray-300 my-2.5"/>
+              <div class="flex justify-around w-full">
+                <div class="flex items-center text-purple-600 text-base cursor-pointer">
                   <ion-icon name="thumbs-up-outline"></ion-icon>
-                  <p>Like</p>
+                  <p class="mx-2">Like</p>
                 </div>
-                <div class="action">
+                <div class="flex items-center text-purple-600 text-base cursor-pointer">
                   <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-                  <p>Comment</p>
+                  <p class="mx-2">Comment</p>
                 </div>
-                <div class="action">
+                <div class="flex items-center text-purple-600 text-base cursor-pointer">
                   <ion-icon name="share-social-outline"></ion-icon>
-                  <p>Share</p>
+                  <p class="mx-2">Share</p>
                 </div>
               </div>
             </div>

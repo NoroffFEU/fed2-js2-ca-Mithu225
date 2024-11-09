@@ -10,16 +10,25 @@
   </head>
 
   <body>
-    <div class="wrapper">
-      <main class="content">
-        <div class="form-top">
-          <img class="logo" src="/asset/snappo.png" alt="Snappo logo" />
+    <div class="flex flex-col min-h-screen">
+      <main class="flex-1">
+        <div class="text-left p-10">
+          <img
+            class="cursor-pointer"
+            src="/asset/snappo.png"
+            alt="Snappo logo"
+          />
 
-          <h1 class="slogan">Connect. Share. Inspire</h1>
+          <h1 class="text-[var(--color-title)] m-0 text-left">
+            Connect. Share. Inspire
+          </h1>
         </div>
-        <form class="form" name="register">
-          <div class="register-form">
-            <label class="gradient-text" for="name">Name</label>
+        <form
+          class="flex flex-col text-lg mx-auto max-w-[40rem] pt-4"
+          name="register"
+        >
+          <div class="w-full flex flex-col gap-4 text-left py-0 px-8 sm:px-0">
+            <label class="text-purple-600" for="name">Name</label>
             <input
               id="name"
               type="text"
@@ -29,10 +38,10 @@
               pattern="^[\w]+$"
               title="Please enter a username using only letters and numbers"
               placeholder="Max 20 characters"
-              class="gradient-input"
+              class="mb-4 p-2 text-base border-2 border-transparent rounded-md bg-origin-border [background-image:linear-gradient(white,white),linear-gradient(135deg,var(--color-gradient-from),var(--color-gradient-to))] [background-clip:padding-box,border-box]"
             />
 
-            <label class="gradient-text" for="email">Email</label>
+            <label class="text-purple-600" for="email">Email</label>
             <input
               id="email"
               type="email"
@@ -41,10 +50,10 @@
               pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
               title="Please enter a valid noroff.no or stud.noroff.no address"
               placeholder="Email with @(stud.)noroff.no"
-              class="gradient-input"
+              class="mb-4 p-2 text-base border-2 border-transparent rounded-md bg-origin-border [background-image:linear-gradient(white,white),linear-gradient(135deg,var(--color-gradient-from),var(--color-gradient-to))] [background-clip:padding-box,border-box]"
             />
 
-            <label class="gradient-text" for="password">Password</label>
+            <label class="text-purple-600" for="password">Password</label>
             <input
               type="password"
               name="password"
@@ -52,30 +61,40 @@
               required
               minlength="8"
               placeholder="Min 08 characters"
-              class="gradient-input"
+              class="mb-4 p-2 text-base border-2 border-transparent rounded-md bg-origin-border [background-image:linear-gradient(white,white),linear-gradient(135deg,var(--color-gradient-from),var(--color-gradient-to))] [background-clip:padding-box,border-box]"
             />
           </div>
-          <div id="errors" class="error"></div>
-          <div class="register-click">
+          <div id="errors" class="error text-red-500"></div>
+          <div class="text-center p-8">
             <button
               id="register-submit-button"
               type="submit"
-              class="register-button"
+              class="bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] text-white p-4 w-[10rem] border-0 rounded-md text-lg font-bold cursor-pointer transition-colors duration-300 ease-in-out hover:bg-gradient-to-tr hover:from-[#feb47b] hover:to-[#ff7e5f]"
             >
               REGISTER
             </button>
           </div>
-          <hr />
+          <hr class="my-4 border-t border-gray-300 opacity-25" />
         </form>
 
-        <div class="form-text">Already registered?</div>
-        <div class="login-link">
-          <a href="/auth/login/" class="switch-login">LOGIN</a>
+        <div class="text-center font-bold text-[var(--color-title)]">
+          Already registered?
+        </div>
+        <div class="text-center p-4">
+          <a
+            href="/auth/login/"
+            class="text-lg font-bold bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] bg-clip-text text-transparent underline decoration-[#8c5fff] decoration-3 text-center hover:decoration-4 hover:underline-offset-4 hover:from-[#ff7e5f] hover:to-[#feb47b]"
+            >LOGIN</a
+          >
         </div>
       </main>
     </div>
-    <footer class="footer">
-      <p>&copy; 2024 Snappo. All rights reserved.</p>
+    <footer
+      class="mt-12 w-full text-center py-5 text-white bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)]"
+    >
+      <p class="flex justify-center items-center text-base">
+        &copy; 2024 Snappo. All rights reserved.
+      </p>
     </footer>
   </body>
 </html>

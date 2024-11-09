@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Noroff FED2 JS2 CA</title>
     <script type="module" src="/src/app.js"></script>
@@ -17,37 +16,67 @@
     ></script>
   </head>
   <body>
-    <header class="header">
-      <div class="header-left">
+    <header
+      class="flex flex-col sm:flex-row justify-between items-center bg-white p-2.5 px-5 gap-4"
+    >
+      <div class="w-full sm:w-auto flex justify-center sm:justify-start">
         <a href="/">
-          <img class="logo" src="/asset/snappo.png" alt="Snappo logo" />
+          <img
+            class="cursor-pointer"
+            src="/asset/snappo.png"
+            alt="Snappo logo"
+          />
         </a>
       </div>
-      <div class="search-bar">
-        <input type="text" placeholder="Search...." class="search-input" />
-        <button class="search-btn">
-          <ion-icon class="search-icon" name="search-outline"></ion-icon>
-        </button>
-      </div>
-      <div class="header-right">
-        <div class="icon-container">
-          <button id="list" class="icon">
+
+      <div
+        class="w-full sm:flex-grow flex justify-center sm:justify-start items-center sm:pl-4"
+      >
+        <div class="relative w-full sm:w-1/2">
+          <input
+            type="text"
+            placeholder="Search...."
+            class="w-full p-2 text-lg border border-gray-300 rounded-full outline-none"
+          />
+          <button
+            class="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer border-0 bg-white"
+          >
             <ion-icon
-              class="single-icon"
+              class="text-lg text-[var(--color-title)]"
+              name="search-outline"
+            ></ion-icon>
+          </button>
+        </div>
+      </div>
+
+      <div class="w-full sm:w-auto flex justify-center sm:justify-end">
+        <div class="flex items-center gap-2">
+          <button
+            id="list"
+            class="w-10 h-10 bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] p-1 border-0 rounded-md text-lg font-bold cursor-pointer transition-[background] duration-300 ease-in-out hover:bg-gradient-to-tr hover:from-[var(--color-gradient-hover-from)] hover:to-[var(--color-gradient-hover-to)]"
+          >
+            <ion-icon
+              class="text-white cursor-pointer"
               size="large"
               name="newspaper-outline"
             ></ion-icon>
           </button>
-          <button id="profile" class="icon">
+          <button
+            id="profile"
+            class="w-10 h-10 bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] p-1 border-0 rounded-md text-lg font-bold cursor-pointer transition-[background] duration-300 ease-in-out hover:bg-gradient-to-tr hover:from-[var(--color-gradient-hover-from)] hover:to-[var(--color-gradient-hover-to)]"
+          >
             <ion-icon
-              class="single-icon"
+              class="text-white cursor-pointer"
               size="large"
               name="person-circle-outline"
             ></ion-icon>
           </button>
-          <button id="logout-button" class="icon">
+          <button
+            id="logout-button"
+            class="w-10 h-10 bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] p-1 border-0 rounded-md text-lg font-bold cursor-pointer transition-[background] duration-300 ease-in-out hover:bg-gradient-to-tr hover:from-[var(--color-gradient-hover-from)] hover:to-[var(--color-gradient-hover-to)]"
+          >
             <ion-icon
-              class="single-icon"
+              class="text-white cursor-pointer"
               size="large"
               name="log-out-outline"
             ></ion-icon>
@@ -55,13 +84,26 @@
         </div>
       </div>
     </header>
-    <div>
-      <div class="profile-details" id="profile-info"></div>
-      <div class="follow-details" id="follow-details"></div>
-      <div class="post-container" id="post-container"></div>
+    <div class="py-4">
+      <div
+        class="flex flex-col items-center justify-center sm:p-4 md:p-8"
+        id="profile-info"
+      ></div>
+      <div
+        class="flex flex-wrap gap-8 p-4 justify-center"
+        id="follow-details"
+      ></div>
+      <div
+        class="flex flex-col items-center justify-center h-full py-8"
+        id="post-container"
+      ></div>
     </div>
-    <footer class="footer">
-      <p>&copy; 2024 Snappo. All rights reserved.</p>
+    <footer
+      class="mt-12 w-full text-center py-5 text-white bg-gradient-to-tr from-[var(--color-gradient-from)] to-[var(--color-gradient-to)]"
+    >
+      <p class="flex justify-center items-center text-base">
+        &copy; 2024 Snappo. All rights reserved.
+      </p>
     </footer>
   </body>
 </html>
